@@ -1,0 +1,8 @@
+public class firstClass {
+
+public static void printDemo(){
+        system.debug('This is Demo Function');
+    }
+
+
+}
