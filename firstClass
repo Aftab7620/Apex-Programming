@@ -3,6 +3,9 @@ public class firstClass {
 public static void printDemo(){
         system.debug('This is Demo Function');
     }
-
+public static void printNum(){
+        integer m=200;
+        system.debug(m);
+    }
 
 }
