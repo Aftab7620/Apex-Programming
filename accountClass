@@ -1,0 +1,7 @@
+public class accountClass{
+
+public static Account getAccount(){
+        Account acc=[Select id,name from Account LiMIT 1];
+        return acc;
+    }
+}
