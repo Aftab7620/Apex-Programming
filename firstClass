@@ -8,4 +8,11 @@ public static void printNum(){
         system.debug(m);
     }
 
+public static void sumNo(integer n1,integer n2){
+        integer num1=n1;
+        integer num2=n2;
+        integer res=num1+num2;
+        system.debug('Sum of two Number ='+res);
+    }
+
 }
