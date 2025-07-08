@@ -1,0 +1,7 @@
+public class getContact{
+
+   public static Contact getContact(){
+        Contact con=[Select id,lastName from contact limit 1];
+        return con;
+    }
+}
