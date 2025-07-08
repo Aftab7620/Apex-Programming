@@ -4,4 +4,10 @@ public class getAccount{
         Account acc=[Select id,name from Account LiMIT 1];
         return acc;
     }
+
+    public static list<Account> getAccounts(){
+        list<Account> acclist=new list<Account>();
+        acclist=[select id,name from Account Limit 10];
+        return acclist;
+    }
 }
