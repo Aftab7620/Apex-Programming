@@ -1,0 +1,12 @@
+public class StringUtility{
+
+  //Reverse Word
+   public static String reverseWords(String input) {
+        String[] wrd=input.split(' ');
+        String result='';
+        for (Integer i=0; i<wrd.size();i++) {
+            result+=wrd[i].reverse()+' ';
+        }
+        return result;
+     }
+}
