@@ -1,0 +1,12 @@
+public class checkPalindrome{
+public static boolean isPalindrome(String input){
+        String str=input.toLowerCase().replace(' ','');
+        String reverse=str.toLowerCase().reverse();
+        if(str.equals(reverse)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+}
