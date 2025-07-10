@@ -1,0 +1,12 @@
+public class DuplicateRemove{
+
+  public static list<integer> removeDuplicates(list<integer> numbers){
+        set<integer> newset=new set<integer>();
+        for(integer i:numbers){
+            newset.add(i);
+        }
+        list<integer> newlist=new list<integer>(newset);
+        return newlist;
+        
+    }
+}
