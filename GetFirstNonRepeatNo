@@ -1,0 +1,21 @@
+public class GetFirstNonRepeatNo{
+
+   public static String getFirstNonRepeatingChar(String input) {
+        Map<String, Integer> maps=new Map<String, Integer>();
+        for (String ch:input.split('')) {
+            if (maps.containsKey(ch)) {
+                Integer count=maps.get(ch);
+                maps.put(ch,count + 1);
+            } else {
+                maps.put(ch,1);
+            }
+        }
+        for (String ch:input.split('')) {
+            if (maps.get(ch) == 1) {
+                return ch;
+            }
+        }
+
+        return null;
+    }
+}
