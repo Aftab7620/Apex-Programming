@@ -6,4 +6,12 @@ public class ContactCreate{
         con.FirstName=Fname;
         insert con;
     }
+
+//Create Contact With Associated Account
+   public static void createConAssoAccount(string lname,id accid){
+        contact con=new contact();
+        con.LastName=lname;
+        con.AccountId=accid;
+        insert con;
+    }
 }
