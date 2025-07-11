@@ -1,0 +1,11 @@
+public class AmountSum{
+
+   public static void sumOfAmount(){
+        list<opportunity> oplist=[select id,amount from opportunity where amount !=null limit 10];
+        Double amount=0;
+        for(Opportunity opp:oplist){
+            amount=amount+opp.amount;
+        }
+        system.debug(amount);
+    }
+}
