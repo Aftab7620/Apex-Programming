@@ -14,4 +14,15 @@ public class ContactCreate{
         con.AccountId=accid;
         insert con;
     }
+
+  //Create Contact With No Of Count
+  public static void createConCount(string lname,integer count){
+        list<contact> conlist=new list<contact>();
+        for(integer i=1;i<=count;i++){
+            contact con=new contact();
+            con.LastName=lname+i;
+            conlist.add(con);
+        }
+        insert conlist;
+    }
 }
