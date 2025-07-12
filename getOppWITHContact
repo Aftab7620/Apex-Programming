@@ -6,4 +6,17 @@ public class getOppWITHContact{
         list<opportunity> opplist=[select id,name,Accountid from opportunity where AccountId=:con.AccountId];
         return opplist;
     }
+
+
+  // fetch the opportunity by taking set of contact id as an parameter
+  public static  list<opportunity>  getOpportunity(set<id> conid){
+        set<id> newset=new set<id>();
+        list<contact> conlist=[select id,accountid from contact where Id IN:conid];
+        for(Contact con:conlist){
+            newset.add(con.accountid);
+        }
+        list<opportunity> opplist=[select id,name,accountid from opportunity where AccountId IN:newset];
+        return opplist;
+        
+    }
 }
