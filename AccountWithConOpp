@@ -1,0 +1,21 @@
+public class AccountWithConOpp{
+
+//create Account With related contact and opportunity
+  public static void createAccConOpp(string accname){
+        Account acc=new Account();
+        acc.name=accname;
+        insert acc;
+        
+        contact con=new contact();
+        con.lastname=accname+'con';
+        con.AccountId=acc.id;
+        insert con;
+        
+        opportunity opp=new opportunity();
+        opp.stagename='Prospecting';
+        opp.CloseDate=system.today();
+        opp.Name='loyalyt';
+        opp.Accountid=acc.id;
+        insert opp;
+    }
+}
