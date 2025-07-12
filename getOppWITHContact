@@ -1,0 +1,9 @@
+public class getOppWITHContact{
+
+  //fetch the opportunity by using the contact id 
+  public static list<opportunity> getAccountWithOpp(id conid){
+        contact con=[select id,lastname,AccountId from contact where id=:conid];
+        list<opportunity> opplist=[select id,name,Accountid from opportunity where AccountId=:con.AccountId];
+        return opplist;
+    }
+}
