@@ -6,4 +6,10 @@ public class FetchContact{
         return conlist;
         
     }
+
+  //Fetch All Contact Associated With Account
+  public static list<contact> getAssoAccount(){
+        list<contact> conlist=[select id,lastname from contact where accountid != null];
+        return conlist;
+    }
 }
