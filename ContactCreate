@@ -25,4 +25,13 @@ public class ContactCreate{
         }
         insert conlist;
     }
+
+  //update contact
+   public static contact updateCon(string lname,id conid){
+        contact con=new contact();
+        con.LastName=lname;
+        con.Id=conid;
+        update con;
+        return con;
+    }
 }
