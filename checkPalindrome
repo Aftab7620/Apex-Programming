@@ -8,5 +8,4 @@ public static boolean isPalindrome(String input){
             return false;
         }
     }
-
 }
