@@ -4,4 +4,18 @@ public static Account getAccount(){
         Account acc=[Select id,name from Account LiMIT 1];
         return acc;
     }
+
+        public static void getContactName(){
+        map<id,double> accmap=new map<id,double>();
+        list<AggregateResult> aglist=[Select Accountid,sum(Amount) total from opportunity GROUP BY AccountId ];
+        for(AggregateResult ag:aglist){
+            id acid=(id)ag.get('AccountId');
+            double amt=(double)ag.get('total');
+            accmap.put(acid,amt);
+        }
+        
+        system.debug(accmap);
+        
+        
+    }
 }
