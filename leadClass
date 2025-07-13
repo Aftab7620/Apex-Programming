@@ -1,0 +1,27 @@
+public class leadClass{
+
+   Public Static Void SearchLead(String Searchword)
+    {
+        String LeadsQuery='SELECT Id,Lastname,Title,Email FROM Lead ';
+        if(Pattern.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$',Searchword))
+        {
+            System.Debug('Search text is Email');
+            LeadsQuery+='WHERE Email=:Searchword ';	
+        }
+        else{
+            System.Debug('Search text is String');
+            String searchtxt='%'+Searchword+'%';
+           LeadsQuery+='WHERE LastName LIKE :searchtxt';
+            //LeadsQuery += 'WHERE LastName=:searchtxt';
+ 
+        }
+        List<lead>lstLeads=Database.Query(LeadsQuery);
+        System.Debug('Number Matching Records Present....'+lstLeads.size());
+        for(Lead ldRecord:lstLeads)
+        {
+            System.Debug(ldRecord);
+            System.Debug('----------------------------------------------------------------------------------');
+        }
+        
+    }
+}
