@@ -12,4 +12,10 @@ public class FetchContact{
         list<contact> conlist=[select id,lastname from contact where accountid != null];
         return conlist;
     }
+
+  //get contact rel to account
+   public static list<contact> getContactRelToAcc(list<account> acclist){
+        list<contact> conlist=[SELECT Id,Name ,AccountId FROM CONTACT WHERE AccountId IN:acclist];
+        return conlist;
+    }
 }
