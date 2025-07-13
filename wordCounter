@@ -1,0 +1,19 @@
+public class wordCounter {
+    
+    public static Map<String, Integer> countWords(String sentence) {
+        String[] words=sentence.split(' ');
+        Map<String,Integer> wordMap=new Map<String,Integer>();
+        for (String word:words) {
+            if (wordMap.containsKey(word)) {
+                Integer count=wordMap.get(word);
+                wordMap.put(word,count + 1);
+            } else {
+                wordMap.put(word,1);
+            }
+        }
+        return wordMap;
+    }
+    
+    
+    
+}
