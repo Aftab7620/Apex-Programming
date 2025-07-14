@@ -31,4 +31,17 @@ public class apexPractice{
         }
     }
 
+
+    //4Create an Apex method that takes a Set of Account Ids and returns a Map of Account Id to Account Name
+    public static map<id,String> getAcc(set<id> accid){
+        map<Id,String> accmap=new map<Id,String>();
+        list<Account> acclist=[SELECT ID,Name FROM Account where Id IN: accid];
+        for(Account acc:acclist){
+            accmap.put(acc.id,acc.name);
+        }
+        return accmap;
+        
+    }
+    
+
 }
