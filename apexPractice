@@ -1,3 +1,9 @@
 public class apexPractice{
 
+   //1 Fetch all the contact which have @gmail.com in email and return the list of contacts
+    public static list<contact> getAllConWithEmail(){
+        list<contact> conlist=[SELECT Id,Email FROM CONTACT WHERE Email LIKE '%@gmail.com'];
+        return conlist;
+    }
+
 }
