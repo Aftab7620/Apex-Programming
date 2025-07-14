@@ -21,4 +21,14 @@ public class apexPractice{
         return acclist;
     }
 
+
+//Write an Apex method to delete all Opportunities with StageName = 'Closed Lost' older than one year.
+ public static void deleteOpp(){
+        Date yearAgo=Date.today().addYears(-1);
+        list<opportunity> opplist=[SELECT ID,Name,StageName From Opportunity where StageName='Closed Lost' AND CloseDate <:yearAgo ];
+        if(opplist.size()>0){
+            delete opplist;
+        }
+    }
+
 }
