@@ -52,6 +52,18 @@ public class apexPractice{
         
         return accmap;
     }
+
+
+   //7
+    public static map<id,integer> getCountOfContact(){
+        map<id,integer> accCount=new map<id,integer>();
+        list<account> acclist=[SELECT Id,Name,(SELECT ID,Name FROM Contacts) From Account];
+        for(Account acc:acclist){
+            accCount.put(acc.id,acc.contacts.size());
+        }
+        return accCount;
+        
+    }
     
 
 }
