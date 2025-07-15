@@ -66,6 +66,25 @@ public class apexPractice{
     }
 
 
+    public static void createLeads(list<string> fname,list<string> lname,list<string> company,list<string> source){
+        list<lead> newlead=new list<lead>();
+        for(integer i=0;i<5;i++){
+            lead ld=new lead();
+            ld.FirstName=fname.get(i);
+            ld.LastName=lname.get(i);
+            ld.Company=company.get(i);
+            ld.LeadSource=source.get(i);
+            newlead.add(ld);
+            
+        }
+        
+        if(newlead.size()>0){
+            insert newlead;
+        }
+        
+    }
+
+
   
     
 
