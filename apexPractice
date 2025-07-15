@@ -42,6 +42,16 @@ public class apexPractice{
         return accmap;
         
     }
+
+   public static map<Id,list<contact>> getAccWithContact(){
+        map<Id,list<contact>> accmap=new map<Id,list<Contact>>();
+        list<Account> acclist=[SELECT Id,Name,(SELECT ID,Name FROM Contacts) From Account];
+        for(Account acc:acclist){
+            accmap.put(acc.id,acc.contacts);
+        }
+        
+        return accmap;
+    }
     
 
 }
