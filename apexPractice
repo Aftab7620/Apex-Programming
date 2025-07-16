@@ -128,6 +128,21 @@ public class apexPractice{
     }
 
 
+   //12
+    public static void deactivateusr(){
+        Date dt=Date.Today().addDays(-90);
+        List<User> deactivateUsrList=new List<User>();
+        List<User> inactiveUsers=[SELECT Id, Name, LastLoginDate, IsActive FROM User WHERE IsActive = TRUE AND LastLoginDate < :dt];
+        for(User u:inactiveUsers){
+            u.isActive=false;
+            deactivateUsrList.add(u);
+        }
+        if(deactivateUsrList.size()>0){
+            update deactivateUsrList;
+        }
+    }
+
+
   
     
 
