@@ -66,6 +66,7 @@ public class apexPractice{
     }
 
 
+   //8
     public static void createLeads(list<string> fname,list<string> lname,list<string> company,list<string> source){
         list<lead> newlead=new list<lead>();
         for(integer i=0;i<5;i++){
@@ -81,6 +82,18 @@ public class apexPractice{
         if(newlead.size()>0){
             insert newlead;
         }
+        
+    }
+
+
+    //9
+    public static map<id,list<opportunity>> getAccRelOpp(){
+        map<id,list<opportunity>> oppmap=new map<id,list<opportunity>>();
+        list<Account> acclist=[SELECT ID,(SELECT Name,StageName FROM Opportunities Where AccountId != Null) From Account];
+        for(Account acc: acclist){
+            oppmap.put(acc.id,acc.opportunities);
+        }
+        return oppmap;
         
     }
 
