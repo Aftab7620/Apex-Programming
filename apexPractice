@@ -98,6 +98,24 @@ public class apexPractice{
     }
 
 
+    //10
+    public static list<case> updateCaseWithHighPriority(){
+        list<case> updatedCase=new list<case>();
+        list<case> caselist=[SELECT Priority from case where Priority='High'];
+        for(Case c:caselist){
+            c.Status='Escalated';
+            updatedCase.add(c);
+        }
+        
+        if(updatedCase.size()>0){
+         update updatedCase;
+         }
+        
+        return updatedCase;
+        
+    }
+
+
   
     
 
