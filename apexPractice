@@ -116,7 +116,7 @@ public class apexPractice{
     }
 
 
-   //11
+   //Write an Apex Method to fetch Account By taking set of con id as param
     public static map<id,string> fetchAccByConId(set<id> conid){
         map<id,string> conmap=new map<id,string>();
         list<contact> conlist=[SELECT Id,Account.Name FROM Contact where Id In: conid];
