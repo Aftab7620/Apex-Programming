@@ -6,6 +6,7 @@ public class getAccount{
         return acc;
     }
 
+//
     public static list<Account> getAccounts(){
         list<Account> acclist=new list<Account>();
         acclist=[select id,name from Account Limit 10];
