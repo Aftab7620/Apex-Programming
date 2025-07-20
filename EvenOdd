@@ -1,6 +1,7 @@
 public class EvenOdd{
 
   // check even Odd
+
    public static void checkEven(integer n){
         if(Math.mod(n,2)==0){
             system.debug('even');
