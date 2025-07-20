@@ -1,9 +1,10 @@
 public class accountClass{
 
-public static Account getAccount(){
+  public static Account getAccount(){
         Account acc=[Select id,name from Account LiMIT 1];
         return acc;
     }
+
 
         public static void getContactName(){
         map<id,double> accmap=new map<id,double>();
