@@ -1,6 +1,7 @@
 public class FetchContact{
 
   //Fetch Contact Associated with pass AccountId
+
    public static list<contact> getContactAssoAccount(id accid){
         list<contact> conlist=[select id,lastname,AccountId from Contact where AccountId =:accid];
         return conlist;
