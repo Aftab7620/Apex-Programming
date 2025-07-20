@@ -2,6 +2,7 @@ public class GetFirstNonRepeatNo{
 
 
    //
+
    public static String getFirstNonRepeatingChar(String input) {
         Map<String, Integer> maps=new Map<String, Integer>();
         for (String ch:input.split('')) {
