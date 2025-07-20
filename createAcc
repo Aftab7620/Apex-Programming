@@ -1,6 +1,7 @@
 public class createAcc{
 
     //Account Creation With Name
+
     public static void createAccount(string acname){
         Account acc=new Account();
         acc.name=acname;
