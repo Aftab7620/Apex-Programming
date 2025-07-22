@@ -7,8 +7,7 @@ public class leadClass{
         {
             System.Debug('Search text is Email');
             LeadsQuery+='WHERE Email=:Searchword ';	
-        }
-        else{
+      } else{
             System.Debug('Search text is String');
             String searchtxt='%'+Searchword+'%';
            LeadsQuery+='WHERE LastName LIKE :searchtxt';
