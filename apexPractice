@@ -6,6 +6,7 @@ public class apexPractice{
         return conlist;
     }
 
+
     //2Create an Apex method that updates the Phone number of all Accounts in a specific industry to a defaultnumber.
     public static list<Account> updateAccount(){
         list<Account> updatedAcc=new list<Account>();
