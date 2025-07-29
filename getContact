@@ -5,6 +5,7 @@ public class getContact{
         return con;
     }
 
+
    public static list<contact> getContacts(){
         list<contact> conlist=[select id,lastname from contact limit 10];
         return conlist;
