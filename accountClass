@@ -5,7 +5,7 @@ public class accountClass{
         return acc;
     }
 
-
+//
         public static void getContactName(){
         map<id,double> accmap=new map<id,double>();
         list<AggregateResult> aglist=[Select Accountid,sum(Amount) total from opportunity GROUP BY AccountId ];
