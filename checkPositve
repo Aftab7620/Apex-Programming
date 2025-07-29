@@ -1,5 +1,6 @@
 public class checkPositve{
 
+
   public static void checkPositive(integer n){
         if(n>0){
             system.debug('No is Positive');
