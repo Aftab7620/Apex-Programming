@@ -161,6 +161,27 @@ public static void stampAccWithOpp(){
         return conlist;
     }
 
+
+   public static void createTaskForOpp(){
+        list<task> tsklist=new list<task>();
+        Date today = Date.today();
+        Date nextDays = Date.today()+7;
+        
+        list<opportunity> opplist=[SELECT Id,Name,CloseDate From Opportunity  WHERE CloseDate >= :today AND CloseDate <= :nextDays];
+        for(Opportunity opp:opplist){
+            task t=new task();
+            t.WhatId = opp.Id; 
+            t.Subject = 'Followup';
+            t.ActivityDate = opp.CloseDate; 
+            t.Status = 'Not Started';
+            t.Priority = 'Normal';
+            tsklist.add(t);
+        }
+        
+        if(tsklist.size()>0)insert tsklist;
+        
+    }
+
   
     
 
