@@ -241,6 +241,29 @@ public static void stampAccWithOpp(){
         }
     }
 
+
+   public static Map<Id, List<Opportunity>> getOpportunitiesByAccount() {
+        // Create an empty map to store results
+        Map<Id, List<Opportunity>> oppMap = new Map<Id, List<Opportunity>>();
+        
+        // Get all Opportunities that have an AccountId
+        List<Opportunity> oppList = [SELECT Id, Name, AccountId FROM Opportunity WHERE AccountId != null];
+        
+        // Loop through each Opportunity
+        for (Opportunity opp : oppList) {
+            // Check if this AccountId is already in the map
+            if (oppMap.containsKey(opp.AccountId)) {
+                // Add to existing list
+                oppMap.get(opp.AccountId).add(opp);
+            } else {
+                // Create a new list with this opportunity and add to the map
+                oppMap.put(opp.AccountId, new List<Opportunity>{ opp });
+            }
+        }
+        
+        // Return the final map
+        return oppMap;
+    }
   
     
 
