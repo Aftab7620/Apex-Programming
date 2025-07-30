@@ -143,6 +143,18 @@ public class apexPractice{
         }
     }
 
+//
+public static void stampAccWithOpp(){
+        list<account> upaclist=new list<account>();
+        list<AggregateResult> aglist=[SELECT AccountId,count(id) total From Opportunity where AccountId !=null GROUP BY AccountId];
+        for(AggregateResult ag:aglist){
+            Account acc=new Account();
+            acc.id=(id)ag.get('AccountId');
+            acc.Total_Opportunities__c=(double)ag.get('total');
+            upaclist.add(acc);
+        }
+        if(upaclist.size()>0)update upaclist;
+    }
 
   
     
