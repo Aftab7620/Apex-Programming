@@ -188,6 +188,16 @@ public static void stampAccWithOpp(){
         return opplist;
     }
 
+
+    public static set<string> getAllUniqueIndustry(){
+        set<string> industryset=new set<string>();
+        list<Account> acclist=[SELECT Id,Industry FROM Account WHERE Industry!=null];
+        for(Account acc:acclist){
+            industryset.add(acc.Industry);
+        }
+        return industryset;
+    }
+
   
     
 
