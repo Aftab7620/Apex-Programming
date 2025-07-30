@@ -198,6 +198,16 @@ public static void stampAccWithOpp(){
         return industryset;
     }
 
+
+    public static list<id> getAccIds(list<string> names){
+        list<Account> acclist=[SELECT Id,Name FROM Account WHERE Name IN:names];
+        list<id> accid=new list<id>();
+        for(Account acc:acclist){
+            accid.add(acc.id);
+        }
+        return accid;
+    }
+
   
     
 
