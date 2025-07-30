@@ -182,6 +182,12 @@ public static void stampAccWithOpp(){
         
     }
 
+
+    public static list<opportunity> topFiveOpp(){
+        list<opportunity> opplist=[select id,amount from opportunity where amount!=null order by amount desc LIMIT 5];
+        return opplist;
+    }
+
   
     
 
