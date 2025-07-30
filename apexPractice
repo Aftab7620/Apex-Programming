@@ -156,6 +156,11 @@ public static void stampAccWithOpp(){
         if(upaclist.size()>0)update upaclist;
     }
 
+    public static list<contact> getAllConWithAccIndustryBank(){
+        list<contact> conlist=[SELECT Id,LastName,Account.Industry From Contact WHERE Account.Industry='Banking'];
+        return conlist;
+    }
+
   
     
 
