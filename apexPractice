@@ -218,6 +218,29 @@ public static void stampAccWithOpp(){
         insert c;
     }
 
+
+    public static void question18(){
+        Set<Id> accountIdsWithMoreThan2Cases = new Set<Id>();
+        for(AggregateResult ar : [
+            SELECT AccountId
+            FROM Case WHERE AccountId!=null
+            GROUP BY AccountId
+            HAVING COUNT(Id) > 2
+        ]) 
+        {
+            System.debug(ar.get('AccountId'));
+            accountIdsWithMoreThan2Cases.add((Id)ar.get('AccountId'));
+        }
+        List<Contact> contacts = [
+            SELECT Id, FirstName, LastName, Email, Account.Name
+            FROM Contact
+            WHERE AccountId!=null AND AccountId IN :accountIdsWithMoreThan2Cases
+        ];
+        for (Contact con : contacts) {
+            System.debug(con.FirstName + ' ' + con.LastName + ' - Account: ' + con.Account.Name);
+        }
+    }
+
   
     
 
