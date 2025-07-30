@@ -208,6 +208,16 @@ public static void stampAccWithOpp(){
         return accid;
     }
 
+
+   public static void createClonnedContact(id conid,string email){
+        contact con=[select id,lastname,email from contact where id=:conid limit 1];
+        
+        Contact c=new Contact();
+        c.lastname=con.lastname+'2';
+        c.email=Email;
+        insert c;
+    }
+
   
     
 
