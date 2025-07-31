@@ -1,7 +1,7 @@
 public class mathsEx{
 
 
-//
+//sum of n natural no
    public static void naturalNo(integer n){
         integer sum=0;
         for(integer i=0;i<=n;i++){
