@@ -9,6 +9,6 @@ public class DuplicateRemove{
         }
         list<integer> newlist=new list<integer>(newset);
         return newlist;
-        
+     
     }
 }
