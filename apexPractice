@@ -242,6 +242,7 @@ public static void stampAccWithOpp(){
     }
 
 
+//
    public static Map<Id, List<Opportunity>> getOpportunitiesByAccount() {
         // Create an empty map to store results
         Map<Id, List<Opportunity>> oppMap = new Map<Id, List<Opportunity>>();
