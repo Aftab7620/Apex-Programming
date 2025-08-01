@@ -28,6 +28,10 @@ if(trigger.isAfter){
     if(trigger.isDelete){
 
     }
+
+    if(trigger.isUndelete){
+
+    }
 }
 
 }
