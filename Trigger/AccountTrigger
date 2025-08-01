@@ -14,3 +14,12 @@ if(trigger.isBefore){
   }
 
 }
+
+if(trigger.isAfter){
+
+    if(trigger.IsBefore){
+
+    }
+}
+
+}
