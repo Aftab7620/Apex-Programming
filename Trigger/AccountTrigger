@@ -1,10 +1,13 @@
-trigger AccountTrigger on Account(){
+trigger AccountTrigger on Account(Before insert,after insert,before update,after update,before delete,after delete,after undelete){
 if(trigger.isBefore){
     if(trigger.isInsert(){
   
       }
     if(trigger.IsUpdate){
     
+    }
+    if(trigger.IsDelete){
+
     }
 
 
