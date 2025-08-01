@@ -3,6 +3,9 @@ if(trigger.isBefore){
     if(trigger.isInsert(){
   
       }
+    if(trigger.IsUpdate){
+    
+    }
 
 
   }
