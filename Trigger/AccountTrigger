@@ -24,6 +24,10 @@ if(trigger.isAfter){
     if(trigger.IsUpdate){
 
     }
+
+    if(trigger.isDelete){
+
+    }
 }
 
 }
