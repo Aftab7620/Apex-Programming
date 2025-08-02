@@ -1,6 +1,6 @@
 public class getOpp{
 
-  //
+  // fetching 10 opportunity from opp object 
    public static list<opportunity> getOpp(){
         list<opportunity> opplist=[select id,stagename,name from opportunity limit 10];
         return opplist;
