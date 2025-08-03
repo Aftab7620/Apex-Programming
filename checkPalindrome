@@ -1,5 +1,5 @@
 public class checkPalindrome{
-//
+//check string is palindrome or not 
 public static boolean isPalindrome(String input){
         String str=input.toLowerCase().replace(' ','');
         String reverse=str.toLowerCase().reverse();
