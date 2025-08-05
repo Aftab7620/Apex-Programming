@@ -1,6 +1,5 @@
 public class AmountSum{
 
-
    //Write a method for sum of Amount 
 
    public static void sumOfAmount(){
