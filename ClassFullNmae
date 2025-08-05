@@ -1,5 +1,4 @@
 public class fullnameprint{
-
 //
 public static void fullName(string fname,string lname){
         string name=fname+' '+lname;
