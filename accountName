@@ -1,7 +1,6 @@
 public class accountName{
 
 //
-
   public static map<id,string> getAccountMap(){
         list<account> acclist=[select id,name from Account limit 10];
         map<id,string> acmap=new map<id,string>();
