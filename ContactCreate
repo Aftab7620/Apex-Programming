@@ -1,5 +1,4 @@
 public class ContactCreate{
-
   public static void createContact(string Lname,String Fname){
         contact con=new contact();
         con.lastname=Lname;
