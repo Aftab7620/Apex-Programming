@@ -52,6 +52,25 @@ public class GovernerLimitTask {
         }
     }
 
+  //Trigger Bulkification
+
+   public static void contactBadPractice(){
+       list<contact> conlist=new list<contact>();
+        for(Integer i=0;i<=150;i++){
+            Contact con=new Contact();
+            con.LastName='GovtCon'+i;
+           // insert con;
+           conlist.add(con);
+        }
+        
+        if(conlist.size()>0){
+            insert conlist;
+        }
+        
+        soqlError();
+        
+    }
+
 
   
 }
