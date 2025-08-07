@@ -71,6 +71,21 @@ public class GovernerLimitTask {
         
     }
 
+   public static void soqlError(){
+        list<contact> clist=[SELECT Id,Lastname From Contact WHERE LastName Like 'GovtCon%'];
+        list<contact> upcon=new list<contact>();
+        for(Contact con :clist){
+           
+            con.Description='updated for gov task';
+            upcon.add(con);
+           
+        }
+        
+        if(upcon.size()>0){
+            update  upcon;
+        }
+    }
+
 
   
 }
