@@ -8,5 +8,15 @@ public class GovernerLimitTask {
         }
     }
 
+  //DML Statement Limit
+
+   public static void tooManyDml(){
+        for(Integer i=0;i<=150;i++){
+            Account acc=new Account();
+            acc.name='Demo' +i;
+            insert acc;
+        }
+    }
+
   
 }
