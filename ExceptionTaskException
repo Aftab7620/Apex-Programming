@@ -34,4 +34,20 @@ public class ExceptionTaskException extends Exception {
             system.debug(e.getMessage());
         }
     }
+
+  //Multiple Catch Blocks
+  public static void multipleCatch(){
+        integer i=19;
+        integer j=0;
+        try{
+            double result=i/j;
+            Account acc=new Account();
+            acc.Description='hello';
+            insert acc;
+        }catch(MathException me){
+            system.debug('exp occured:'+me.getMessage());
+        }catch(DMLException e){
+            system.debug(e.getMessage());
+        }
+    }
 }
