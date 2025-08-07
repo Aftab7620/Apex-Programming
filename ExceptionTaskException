@@ -50,4 +50,30 @@ public class ExceptionTaskException extends Exception {
             system.debug(e.getMessage());
         }
     }
+
+  //Exception in Trigger
+  public static void triggerTryCatchEx(list<Account> newlist){
+        list<contact> conlist=new list<contact>();
+        for(Account acc:newlist){
+            if(acc.Type=='Customer - Direct'){
+                try{
+                    Contact con=new Contact();
+                    con.LastName=null;
+                    con.Description='demo data';
+                    con.AccountId=acc.id;
+                    conlist.add(con);
+                }catch(DMLException e){
+                    system.debug(e.getMessage());
+                }
+            }
+        }
+        if(conlist.size()>0){
+            try{
+                insert conlist;
+            }catch(Exception ex){
+                system.debug(ex.getMessage());
+            }
+            
+        }
+    }
 }
