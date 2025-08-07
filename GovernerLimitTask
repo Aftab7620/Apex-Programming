@@ -29,6 +29,16 @@ public class GovernerLimitTask {
         }
     }
 
+  //Heap Size Limit
+
+  public static void heapSizeLimit(){
+       String str='';
+        for(integer i=0;i<=1000000;i++){
+            str+='A';
+        }
+        system.debug(str);
+}
+
 
   
 }
