@@ -39,6 +39,19 @@ public class GovernerLimitTask {
         system.debug(str);
 }
 
+  //Using Limits Class
+
+  public static void limitClass(){
+        Contact con=[select id,name,email from contact limit 1];
+        
+        if(con!=null){
+            con.email='demolimit@ci.on';
+            update con;
+            system.debug('Queries=:'+Limits.getQueries());
+             system.debug('Dml Statements=:'+Limits.getDMlStatements());
+        }
+    }
+
 
   
 }
