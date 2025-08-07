@@ -10,4 +10,28 @@ public class ExceptionTaskException extends Exception {
             System.debug(e);
         }
     }
+
+  //Custom Exception
+  public static void customExp(){
+        try{
+            integer age=14;
+            if(age<18){
+                throw new ExceptionTaskException('You Are Minor');
+            }
+        }catch(Exception e){
+            system.debug(e.getMessage());
+        }
+       
+    }
+
+  //DML Exception Handling
+  public static void DmlExp(){
+        try{
+            Contact con=new Contact();
+            con.phone='23456789';
+            insert con;
+        }catch(DMLException e){
+            system.debug(e.getMessage());
+        }
+    }
 }
