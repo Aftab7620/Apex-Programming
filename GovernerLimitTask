@@ -1,4 +1,12 @@
 public class GovernerLimitTask {
 
+  //Observe the limit on number of SOQL queries. SOQL Limit Breach
+
+   public static void tooManySoql(){
+        for(Integer i=0;i<=200;i++){
+            Contact con=[Select Id From Contact LIMIT 1];
+        }
+    }
+
   
 }
