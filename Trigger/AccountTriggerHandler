@@ -19,4 +19,15 @@ public class AccountTriggerHandler {
             }
         }
     }
+
+  public static void checkNewName(list<account> newlist,map<id,Account> oldmap){
+        for(Account acc:newlist){
+            Account oldAcc=oldmap.get(acc.id);{
+                if(acc.Name!=oldAcc.name){
+                    acc.addError('U cant modify the Record');
+                }
+            }
+        }
+        
+    }
 }
