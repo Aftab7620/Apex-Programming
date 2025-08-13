@@ -30,4 +30,21 @@ public class AccountTriggerHandler {
         }
         
     }
+
+  public static void createAssoContact(list<account> newlist){
+        list<contact> conlist=new list<contact>();
+        for(Account acc:newlist){
+            if(acc.name!=null){
+                Contact con=new Contact();
+                con.lastname=acc.name+' Acc';
+                con.AccountId=acc.id;
+                conlist.add(con);
+            }
+        }
+        if(conlist.size()>0){
+            insert conlist;
+        }
+    }
+
+  
 }
