@@ -5,6 +5,7 @@ public class accountClass{
         return acc;
     }
 
+
 //
         public static void getContactName(){
         map<id,double> accmap=new map<id,double>();
