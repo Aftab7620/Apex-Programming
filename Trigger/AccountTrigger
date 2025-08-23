@@ -5,7 +5,6 @@ if(trigger.isBefore){
         AccountTriggerHandler.AddBillingToShipping(trigger.new);
         AccountTriggerHandler.checkRevenue(trigger.new);
         AccountTriggerHandler.checkPhoneAndEmail(trigger.new);
-
       }
     if(trigger.IsUpdate){
     
