@@ -1,7 +1,6 @@
 public class AmountSum{
 
    //Write a method for sum of Amount 
-
    public static void sumOfAmount(){
         list<opportunity> oplist=[select id,amount from opportunity where amount !=null limit 10];
         Double amount=0;
