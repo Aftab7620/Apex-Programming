@@ -21,5 +21,23 @@ public class callOutDemosfdc2sfdc{
         return awrap;
     }
 
+  public static void makeGetCall(){
+        AcccessToken acwrapper=getToken();
+        if(acwrapper!= null && acwrapper.access_token!=null){
+            HttpRequest request=new HttpRequest();
+            string endpoint=acwrapper.instance_url+ '/services/apexrest/sf0712';
+           // endpoint=endpoint+ '?firstName=Sids&lastName=s';
+           endpoint=endpoint+ '?Name=Jack';
+            request.setEndpoint(endpoint);
+            request.setMethod('GET');
+            request.setHeader('Content-type','application/json');
+            request.setHeader('Authorization','Bearer '+acwrapper.access_token);
+            http http=new http();
+            HttpResponse res=http.send(request);
+            system.debug(res);
+            system.debug(res.getBody());       
+        }     
+    }
+
   
 }
