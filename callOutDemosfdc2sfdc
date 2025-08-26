@@ -1,4 +1,25 @@
 public class callOutDemosfdc2sfdc{
 
+  public static AcccessToken getToken(){
+        string uname='';
+        string pwd='';
+        string clientKey='';
+        string clientSecret='';
+
+        http htp=new http();
+        HttpRequest req=new HttpRequest();
+        req.setEndpoint('https://login.salesforce.com/services/oauth2/token');
+        string reqbody='grant_type=password'+'&client_id='+clientKey+'&client_secret='+clientSecret+'&username='+uname+'&password='+pwd;
+        req.setBody(reqbody);
+        //req.setHeader('Content-Type','application/x-www-form-urlencoded');
+        req.setMethod('POST');
+        HttpResponse response=htp.send(req);
+        string resody=response.getBody();
+        system.debug('Response'+response);
+        AcccessToken awrap=(AcccessToken)JSON.deserialize(resody,AcccessToken.class);
+        system.debug(awrap);
+        return awrap;
+    }
+
   
 }
