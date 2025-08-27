@@ -5,7 +5,6 @@ public class callOutDemosfdc2sfdc{
         string pwd='';
         string clientKey='';
         string clientSecret='';
-
         http htp=new http();
         HttpRequest req=new HttpRequest();
         req.setEndpoint('https://login.salesforce.com/services/oauth2/token');
