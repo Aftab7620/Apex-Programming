@@ -7,7 +7,6 @@ if(trigger.isBefore){
         AccountTriggerHandler.checkPhoneAndEmail(trigger.new);
       }
     if(trigger.IsUpdate){
-    
     }
     if(trigger.IsDelete){
 
