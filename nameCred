@@ -5,7 +5,7 @@ public class nameCred{
         req.setEndPoint('callout:integrateOrg2/services/data/v64.0/sobjects/Account/');
         req.setMethod('POST');
         req.setHeader('Content-type','application/json');
-        req.setBody('{"Name":"SwapnilName"}');
+        req.setBody('{"Name":"Aftab"}');
         HttpResponse res=http.send(req);
          System.debug('Status Code: ' + res.getStatusCode());
         system.debug('resssponse:'+res.getBody());
