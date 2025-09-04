@@ -34,5 +34,10 @@ public class revClass{
         return con;
     }
 
+   public static list<Account> getTenAccounts(){
+        list<Account> acclist=[SELECT Id,Name FROM Account LIMIT 10];
+        return acclist;
+    }
+
 
 }
