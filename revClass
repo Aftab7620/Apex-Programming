@@ -39,5 +39,10 @@ public class revClass{
         return acclist;
     }
 
+  public static list<opportunity> getOpps(){
+        list<Opportunity> oplist=[Select Id,Name from Opportunity Limit 10];
+        return oplist;
+    }
+
 
 }
