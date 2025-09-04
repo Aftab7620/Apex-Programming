@@ -4,5 +4,10 @@ public class revClass{
         system.debug('this is demo');
     }
 
+  public static void variablePrint(){
+        integer i=200;
+        system.debug(i);
+    }
+
 
 }
