@@ -14,5 +14,10 @@ public class revClass{
         system.debug('Addition of two no is :'+res);
     }
 
+  public static void subtract(integer n1,integer n2){
+        integer r=n1-n2;
+        system.debug(r);
+    }
+
 
 }
