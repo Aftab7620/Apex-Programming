@@ -9,5 +9,10 @@ public class revClass{
         system.debug(i);
     }
 
+  public static void add(integer n,integer m){
+        integer res=n+m;
+        system.debug('Addition of two no is :'+res);
+    }
+
 
 }
