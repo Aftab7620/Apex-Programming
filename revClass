@@ -19,5 +19,10 @@ public class revClass{
         system.debug(r);
     }
 
+  public static String fullName(String Fname,String Lname){
+        String fullName=Fname+' '+Lname;
+        return fullName;
+    }
+
 
 }
