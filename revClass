@@ -24,5 +24,10 @@ public class revClass{
         return fullName;
     }
 
+  public static Account getAccounts(){
+        Account acc=[SELECT Id,Name FROM ACCOUNT LIMIT 1];
+        return acc;
+    }
+
 
 }
