@@ -1,4 +1,8 @@
 public class revClass{
 
+  public static void print(){
+        system.debug('this is demo');
+    }
+
 
 }
