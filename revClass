@@ -29,5 +29,10 @@ public class revClass{
         return acc;
     }
 
+  public static Contact getContact(){
+        Contact con=[SELECT Id,Firstname,LastName FROM CONTACT LIMIT 1];
+        return con;
+    }
+
 
 }
