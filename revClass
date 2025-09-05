@@ -86,5 +86,14 @@ public class revClass{
         
     }
 
+  public static map<String,String> getIdName(){
+        list<Account> accList=[select Id,Name FROM Account LIMIT 10];
+        map<String,String> accMap=new map<String,String>();
+        for(Account acc:accList){
+            accMap.put(acc.id,acc.name);
+        }
+        return accmap;
+    }
+
 
 }
