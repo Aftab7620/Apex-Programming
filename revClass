@@ -63,5 +63,16 @@ public class revClass{
         return res;
     }
 
+  public static list<string> acName(){
+        list<Account> acclist=[Select Id,Name From Account LIMIT 10];
+        list<String> names=new list<String>();
+        
+        for(Account acc:acclist){
+            names.add(acc.name);
+        }
+        
+        return names;
+    }
+
 
 }
