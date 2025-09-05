@@ -109,5 +109,12 @@ public class revClass{
         insert con;
     }
 
+  public static void updateContact(String conId,string lname){
+        Contact con=new Contact();
+        con.id=conId;
+        con.lastname=lname;
+        update con;
+    }
+
 
 }
