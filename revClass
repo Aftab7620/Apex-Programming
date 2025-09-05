@@ -116,5 +116,10 @@ public class revClass{
         update con;
     }
 
+   public static list<contact> getContacts(String lname){
+        list<contact> conlist=[select id,LASTNAME FROM CONTACT WHERE Lastname =:lname];
+        return conlist;
+    }
+
 
 }
