@@ -53,5 +53,15 @@ public class revClass{
         return sum;
     }
 
+  public static integer table(integer n){
+        integer res;
+        for(integer i=1;i<=10;i++){
+            res=i*n;
+            system.debug(res);
+        }
+        
+        return res;
+    }
+
 
 }
