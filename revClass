@@ -95,5 +95,19 @@ public class revClass{
         return accmap;
     }
 
+  public static void createContact(String Fname,String Lname){
+        Contact con=new Contact();
+        con.firstname=Fname;
+        con.LastName=Lname;
+        insert con;
+    }
+    
+    public static void createContactWithAccId(String accid,String name){
+        Contact con=new Contact();
+        con.LastName=name;
+        con.AccountId=accid;
+        insert con;
+    }
+
 
 }
