@@ -121,5 +121,10 @@ public class revClass{
         return conlist;
     }
 
+  public static list<contact> getContactId(id accid){
+        list<contact> conlist=[select id,Accountid,lastname from contact where AccountId=:accid];
+        return conlist;
+    }
+
 
 }
