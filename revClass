@@ -74,5 +74,17 @@ public class revClass{
         return names;
     }
 
+  public static decimal sumOfoPP(){
+        
+        decimal sum=0;
+        list<opportunity> oppList=[SELECT Id,Amount from Opportunity where Amount!=null limit 10];
+        for(opportunity opp:oppList){
+            sum=sum+opp.Amount;
+        }
+        return sum;
+        
+        
+    }
+
 
 }
