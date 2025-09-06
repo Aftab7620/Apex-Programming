@@ -81,9 +81,7 @@ public class revClass{
         for(opportunity opp:oppList){
             sum=sum+opp.Amount;
         }
-        return sum;
-        
-
+        return sum;   
 
     }
 
