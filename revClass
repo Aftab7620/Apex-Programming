@@ -82,7 +82,6 @@ public class revClass{
             sum=sum+opp.Amount;
         }
         return sum;   
-
     }
 
   public static map<String,String> getIdName(){
