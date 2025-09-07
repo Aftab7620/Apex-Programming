@@ -58,7 +58,6 @@ public class revClass{
             res=i*n;
             system.debug(res);
         }
-       
         return res;
     }
 
