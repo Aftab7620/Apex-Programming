@@ -48,8 +48,7 @@ public class revClass{
         integer sum=0;
         for(integer i=0;i<=n;i++){
             sum=sum+i;
-        }
-        
+        }      
         return sum;
     }
 
