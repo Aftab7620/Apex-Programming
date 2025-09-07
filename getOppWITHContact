@@ -7,7 +7,6 @@ public class getOppWITHContact{
         return opplist;
     }
 
-
   // fetch the opportunity by taking set of contact id as an parameter
   public static  list<opportunity>  getOpportunity(set<id> conid){
         set<id> newset=new set<id>();
