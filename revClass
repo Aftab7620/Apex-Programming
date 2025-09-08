@@ -221,4 +221,23 @@ public static void updateContact(String conId,string lname){
         }
         return mp;
     }
+
+  public static map<id,integer> getAccConCount(){
+        list<Opportunity> opplist=[select Id,AccountId From Opportunity Limit 20];
+        map<id,integer> acmap=new map<id,integer>();
+        set<id> accid=new set<id>();
+        for(Opportunity opp:opplist){
+            if(opp.AccountId!=null){
+                accid.add(opp.AccountId);
+            }
+        }
+        
+        list<Account> acclist=[Select Id,(Select Id,AccountId From Contacts ) From Account Where Id IN:accid];
+        
+        for(Account acc:acclist){
+            acmap.put(acc.id,acc.contacts.size());
+            
+        }
+        return acmap;
+    }
 }
