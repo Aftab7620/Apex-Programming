@@ -203,4 +203,22 @@ public static void updateContact(String conId,string lname){
         list<Opportunity> opplist=[SELECT Id,Name,Amount FROM Opportunity WHERE Amount >10000];
         return opplist;
     }
+
+  public static map<id,list<contact>> getIdCon(){
+        list<contact> conlist=[SELECT Id,AccountId FROM Contact WHERE AccountId!=NULL];
+        map<id,list<contact>> mp=new map<id,list<contact>>();
+        list<contact> cclist=new list<contact>();
+        
+        for(Contact con:conlist){
+            if(mp.containskey(con.accountId)){
+                cclist=mp.get(con.AccountId);
+                cclist.add(con);
+                mp.put(con.AccountId,cclist);
+            }else{
+                cclist.add(con);
+                mp.put(con.AccountId,cclist);
+            }
+        }
+        return mp;
+    }
 }
