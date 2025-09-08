@@ -174,4 +174,10 @@ public static void updateContact(String conId,string lname){
         return conlist;
         
     }
+
+  public static list<Account> getRNameAcc(){
+        list<Account> acclist=[SELECT Id,Name from Account Where Name LIKE 'r%'];
+        
+        return acclist;
+    }
 }
