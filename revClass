@@ -257,4 +257,23 @@ public static void updateContact(String conId,string lname){
         }
         return acmap;
     }
+
+  public static map<id,list<opportunity>> getOppsWithAcc(){
+        
+        list<opportunity> opplist=[select id,accountid from opportunity where accountid !=null limit 20];
+        map<id,list<opportunity>> opmap=new map<id,list<opportunity>>();
+        list<opportunity> oppl=new list<opportunity>();
+        
+        for(Opportunity opp:opplist){
+            if(opmap.containskey(opp.AccountId)){
+                oppl=opmap.get(opp.AccountId);
+                oppl.add(opp);
+                opmap.put(opp.AccountId,oppl);
+            }else{
+                oppl.add(opp);
+                opmap.put(opp.AccountId,oppl);
+            }
+        }
+        return opmap;
+    }
 }
