@@ -313,4 +313,9 @@ public static void updateContact(String conId,string lname){
         }
         return opmap;
     }
+
+  public static list<contact> getCONName(map<id,string> acmap){
+        list<contact> conlist=[select id,lastname from contact where Accountid in:acmap.keyset()];
+        return conlist;
+    }
 }
