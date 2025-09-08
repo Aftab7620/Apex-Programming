@@ -240,4 +240,21 @@ public static void updateContact(String conId,string lname){
         }
         return acmap;
     }
+
+  public static map<id,integer> getOppCon(){
+        list<contact> conlist=[select id,AccountId From Contact where AccountId !=Null Limit 20];
+        set<id> accid=new set<id>();
+        for(Contact con:conlist){
+            accid.add(con.AccountId);
+        }
+        
+        list<Account> accList=[select Id,(Select Id,AccountId from Opportunities) From Account Where Id IN:accid];
+        
+        map<id,integer> acmap=new map<id,integer>();
+        for(Account acc:accList){
+            acmap.put(acc.id,acc.opportunities.size());
+            
+        }
+        return acmap;
+    }
 }
