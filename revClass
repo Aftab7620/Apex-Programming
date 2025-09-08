@@ -300,4 +300,17 @@ public static void updateContact(String conId,string lname){
             }
         }
     }
+
+  public static map<id,decimal> getAmt(){
+        list<opportunity> opplist=[select id,amount,accountid from opportunity where amount !=null and accountid!=null];
+        map<id,decimal> opmap=new map<id,decimal>();
+        for(Opportunity opp:opplist){
+            if(opmap.containskey(opp.accountid)){
+                opmap.put(opp.AccountId,opmap.get(opp.AccountId)+opp.Amount);
+            }else{
+                opmap.put(opp.AccountId,opp.Amount);
+            }
+        }
+        return opmap;
+    }
 }
