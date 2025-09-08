@@ -146,4 +146,15 @@ public static void updateContact(String conId,string lname){
         list<opportunity> oppList=[Select Id,Accountid from Opportunity where AccountId =:con.AccountId];
         return opplist;
     }
+
+   public static list<opportunity> getOpportunities(set<id> conid){
+        list<contact> conlist=[select id,Accountid from contact where id in:conid];
+        set<id> accid=new set<id>();
+        for(Contact con:conlist)
+        {
+            accid.add(con.AccountId);
+        }
+        list<opportunity> opplist=[select id,AccountId from Opportunity where AccountID IN:accid];
+        return opplist;
+    }
 }
