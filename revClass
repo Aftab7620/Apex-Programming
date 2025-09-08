@@ -291,4 +291,13 @@ public static void updateContact(String conId,string lname){
         return conlist;
         
     }
+
+   public static void accessInnerQueryField(){
+        list<account> acclist=[select id,(select id,lastname from contacts) from account];
+        for(Account acc:acclist){
+            for(Contact con:acc.contacts){
+                system.debug(con.lastname);
+            }
+        }
+    }
 }
