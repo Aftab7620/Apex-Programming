@@ -180,4 +180,22 @@ public static void updateContact(String conId,string lname){
         
         return acclist;
     }
+
+  public static list<contact> getContacts(){
+        list<Account> acclist=[SELECT Id,Name From Account];
+        set<id> accid=new set<id>();
+        for(Account acc:acclist){
+            accid.add(acc.id);
+        }
+        
+        list<contact> conlist=[SELECT Id,Lastname,AccountId FROM Contact where AccountId IN:accid];
+        
+        
+        list<opportunity> opplist=[select id,name,AccountID from opportunity where AccountID IN: accid];
+        for(Opportunity opp:opplist){
+            system.debug(opp.name);
+        }
+        
+        return conlist;
+    }
 }
