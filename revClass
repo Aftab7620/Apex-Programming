@@ -318,4 +318,15 @@ public static void updateContact(String conId,string lname){
         list<contact> conlist=[select id,lastname from contact where Accountid in:acmap.keyset()];
         return conlist;
     }
+
+  public static map<id,list<opportunity>> getDAta(map<id,string> acmap){
+        list<Account> acclist=[select id,name ,(select id,name from opportunities) from account where id in:acmap.keyset()];
+        
+        map<id,list<opportunity>> ac=new map<id,list<opportunity>>();
+        for(Account acc:acclist){
+            ac.put(acc.id,acc.opportunities);
+        }
+        
+        return ac;
+    }
 }
