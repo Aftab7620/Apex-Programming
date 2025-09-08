@@ -276,4 +276,19 @@ public static void updateContact(String conId,string lname){
         }
         return opmap;
     }
+
+  public static list<contact> insertConWithAcc(){
+        list<Account> acclist=[Select Id,name,(SELECT id,Lastname from contacts) from account limit 15];
+        list<contact> conlist=new list<contact>();
+        for(Account acc:acclist){
+            if(acc.contacts.size()==0){
+                Contact con=new Contact();
+                con.lastname=acc.Name+'rev demo';
+                conlist.add(con);
+            }
+        }
+        if(conlist.size()>0) insert conlist;
+        return conlist;
+        
+    }
 }
