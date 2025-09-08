@@ -140,4 +140,10 @@ public static void updateContact(String conId,string lname){
         opp.CloseDate=system.today();
         insert opp;
     }
+
+  public static list<opportunity> fetchOpp(Id conId){
+        Contact con=[select Id,AccountId from Contact where Id=:conId];
+        list<opportunity> oppList=[Select Id,Accountid from Opportunity where AccountId =:con.AccountId];
+        return opplist;
+    }
 }
