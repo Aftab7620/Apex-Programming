@@ -122,4 +122,22 @@ public static void updateContact(String conId,string lname){
         list<contact> conlist=[select id,Accountid,lastname from contact where AccountId=:accid];
         return conlist;
     }
+
+   public static void createAccConOpp(String acname,String lastname,String opName){
+        Account acc=new Account();
+        acc.name=acname;
+        insert acc;
+        
+        Contact con=new Contact();
+        con.lastname=lastname;
+        con.AccountId=acc.id;
+        insert con;
+        
+        Opportunity opp=new Opportunity();
+        opp.name=opName;
+        opp.StageName='Prospecting';
+        opp.AccountId=acc.id;
+        opp.CloseDate=system.today();
+        insert opp;
+    }
 }
