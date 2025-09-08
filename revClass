@@ -157,4 +157,21 @@ public static void updateContact(String conId,string lname){
         list<opportunity> opplist=[select id,AccountId from Opportunity where AccountID IN:accid];
         return opplist;
     }
+
+   public static list<contact> createConWithAcc(list<Account> acclist){
+        list<contact> conlist=new list<contact>();
+        for(Account acc:acclist){
+            Contact con=new Contact();
+            con.lastname=acc.name+'con rev';
+            con.AccountId=acc.id;
+            conlist.add(con);
+        }
+        
+        if(conlist.size()>0){
+            insert conlist;
+        }
+        
+        return conlist;
+        
+    }
 }
