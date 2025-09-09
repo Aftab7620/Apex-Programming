@@ -1,5 +1,13 @@
 
 public static ContactTriggerHandler{
 
+ public static void checkName(list<contact> newlist){
+        for(Contact con:newlist){
+            if(con.lastname=='test'){
+                con.addError('Last Name Cannot be Test');
+            }
+        }
+    }
+
 
 }
