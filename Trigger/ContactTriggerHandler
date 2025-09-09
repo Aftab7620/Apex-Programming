@@ -1,4 +1,3 @@
-
 public static ContactTriggerHandler{
 
  public static void checkName(list<contact> newlist){
@@ -34,6 +33,15 @@ public static ContactTriggerHandler{
         for(contact con:newlist){
             if(con.email!=null && duplicate.contains(con.Email)){
                 con.addError('Email Already Present in Object');
+            }
+        }
+    }
+
+  public static void populateEmail(list<contact> newlist){
+        for(contact con:newlist){
+            if(con.email == null){
+                string email=con.lastname+'@gmail.com';
+                con.Email=email.deletewhitespace();
             }
         }
     }
