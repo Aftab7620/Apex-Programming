@@ -17,5 +17,26 @@ public static ContactTriggerHandler{
         }
     }
 
+ public static void checkEmail(list<contact> newlist){
+        set<string> emailset=new set<string>();
+        for(contact con:newlist){
+            if(con.Email!=null){
+                emailset.add(con.email);
+            }
+        }
+        
+        set<string>duplicate=new set<string>();
+        list<contact> conlist=[select id,email from contact where email in:emailset];
+        for(contact con:conlist){
+            duplicate.add(con.Email);
+        }
+        
+        for(contact con:newlist){
+            if(con.email!=null && duplicate.contains(con.Email)){
+                con.addError('Email Already Present in Object');
+            }
+        }
+    }
+
 
 }
