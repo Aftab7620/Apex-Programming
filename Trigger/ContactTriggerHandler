@@ -46,5 +46,25 @@ public static ContactTriggerHandler{
         }
     }
 
+ public static void populatePhone(list<contact> newlist){
+        set<id> accid=new set<id>();
+        for(Contact con:newlist){
+            if(con.AccountId!=null){
+                accid.add(con.AccountId);
+            }
+        }
+        
+        map<id,account> accmap=new map<id,account>();
+        list<Account> acclist=[select id,phone from account where phone!=null and id in:accid];
+        for(Account acc:acclist){
+            accmap.put(acc.id,acc);
+        }
+        for(Contact con:newlist){
+            if(con.AccountId!=null){
+                con.Phone=accmap.get(con.AccountId).phone;
+            }
+        }
+    }
+
 
 }
