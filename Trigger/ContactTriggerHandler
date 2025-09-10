@@ -66,5 +66,27 @@ public static ContactTriggerHandler{
         }
     }
 
+  public static void markConVip(list<contact> newlist){
+        set<id> accid=new set<id>();
+        for(Contact con:newlist){
+            if(con.accountid!=null){
+                accid.add(con.AccountId);
+            }
+        }
+        
+        list<Account> acclist=[select id,name,isVip__c from Account where isVip__c=TRUE and id in:accid];
+        
+        set<id>accids=new set<id>();
+        for(Account acc:acclist){
+            accids.add(acc.id);
+        }
+        
+        for(Contact con:newlist){
+            if(con.AccountId!=null){
+                con.isConVip__c=accid.contains(con.AccountId);
+            }
+        }
+    }
+
 
 }
