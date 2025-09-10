@@ -6,6 +6,7 @@ trigger contactTrigger on Contact (before insert,after insert,before update,afte
              contactTriggerHandler.checkPhone(trigger.new);
              contactTriggerHandler.checkEmail(trigger.new);
              contactTriggerHandler.populateEmail(trigger.new);
+             contactTriggerHandler.populatePhone(trigger.new);
            
           
         }
