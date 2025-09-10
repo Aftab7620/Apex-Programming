@@ -88,5 +88,30 @@ public static ContactTriggerHandler{
         }
     }
 
+ public static void createAssoAccount(list<contact> newlist){
+        list<account> acclist=new list<account>();
+        for(Contact con:newlist){
+            if(con.accountid==null){
+                Account acc=new Account();
+                acc.name=con.lastname;
+                acclist.add(acc);
+            }
+        }
+        if(acclist.size()>0){
+            insert acclist;
+        }
+        
+        map<String,id> newmap=new map<string,id>();
+        for(Account acc:acclist){
+            newmap.put(acc.name,acc.id);
+        }
+        
+        for(Contact con:newlist){
+            if(con.AccountId==null){
+                con.AccountId=newmap.get(con.lastname);
+            }
+        }
+    }
+
 
 }
