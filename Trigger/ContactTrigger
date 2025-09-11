@@ -22,6 +22,7 @@ trigger contactTrigger on Contact (before insert,after insert,before update,afte
     
     if(trigger.isAfter){
         if(trigger.isInsert){
+            contactTriggerHandler.updateAccPhone(trigger.new);
             
         }
         if(trigger.isUpdate){
