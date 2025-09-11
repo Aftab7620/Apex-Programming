@@ -113,5 +113,23 @@ public static ContactTriggerHandler{
         }
     }
 
+  public static void updateAccPhone(list<contact> newlist){
+        
+        map<id,Account> acmap=new map<id,Account>();
+        for(Contact con:newlist){
+            if(con.AccountId!=null){
+                Account acc=new Account();
+                acc.id=con.AccountId;
+                acc.Phone=con.Phone;
+                acmap.put(acc.id,acc);
+            }
+        }
+        
+        if(acmap.size()>0){
+            update acmap.values();
+        }
+        
+    }
+
 
 }
