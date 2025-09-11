@@ -165,5 +165,28 @@ public static ContactTriggerHandler{
         }
     }
 
+  public static void aggAccUpdate(list<contact> newlist){
+        set<id> accid=new set<id>();
+        for(Contact con:newlist){
+            if(con.AccountId!=null){
+                accid.add(con.AccountId);
+            }
+        }
+        
+        list<Account> acclist=new list<Account>();
+        for(AggregateResult ag:[SELECT AccountId,count(id) tc from Contact where AccountId IN:accid group by AccountId]){
+            Account acc=new Account();
+            acc.id=(id)ag.get('AccountId');
+            acc.Total_Active_Contacts__c=(double)ag.get('tc');
+            acclist.add(acc);
+        }
+        
+        if(acclist.size()>0){
+            update acclist;
+        }
+    }
+    
+    
+
 
 }
