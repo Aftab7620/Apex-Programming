@@ -24,10 +24,12 @@ if(trigger.isAfter){
 
     if(trigger.IsInsert){
         AccountTriggerHandler.createAssoContact(trigger.new);
+        
 
     }
 
     if(trigger.IsUpdate){
+         AccountTriggerHandler.updateContactPhone(trigger.new,trigger.oldmap);
 
     }
 
