@@ -26,6 +26,7 @@ trigger contactTrigger on Contact (before insert,after insert,before update,afte
             
         }
         if(trigger.isUpdate){
+            contactTriggerHandler.backup(trigger.old);
             
         }
         if(trigger.isDelete){
