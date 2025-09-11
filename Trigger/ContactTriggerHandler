@@ -145,5 +145,25 @@ public static ContactTriggerHandler{
         }
     }
 
+  public static void updateAccWithContactCount(list<contact> newlist){
+        set<id> accid=new set<id>();
+        if(newlist.size()>0){
+             for(Contact con:newlist){
+            if(con.AccountId!=null){
+                accid.add(con.AccountId);
+            	}
+        	}
+        }
+       
+        list<Account> acclist=[select id,(select id,accountid from contacts) from Account WHERE Id IN:accid];
+        for(Account acc:acclist){
+            acc.Total_Active_Contacts__c=acc.contacts.size();
+        }
+        
+        if(acclist.size()>0){
+            update acclist;
+        }
+    }
+
 
 }
