@@ -23,6 +23,7 @@ trigger contactTrigger on Contact (before insert,after insert,before update,afte
     if(trigger.isAfter){
         if(trigger.isInsert){
             contactTriggerHandler.updateAccPhone(trigger.new);
+            contactTriggerHandler.updateAccWithContactCount(trigger.new);
             
         }
         if(trigger.isUpdate){
@@ -30,6 +31,7 @@ trigger contactTrigger on Contact (before insert,after insert,before update,afte
             
         }
         if(trigger.isDelete){
+             contactTriggerHandler.updateAccWithContactCount(trigger.new);
             
         }
         if(trigger.isUndelete){
