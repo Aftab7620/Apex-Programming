@@ -46,5 +46,23 @@ public class AccountTriggerHandler {
         }
     }
 
+  //whenever the account phone get updated also update its related contact phone
+    public static void updateContactPhone(list<Account> newlist,map<id,account>oldmap){
+        list<contact> conlist=new list<contact>();
+        for(Account acc:newlist){
+            Account oldAcc=oldmap.get(acc.id);
+            if(acc.phone!=oldAcc.Phone){
+                list<contact> conlist1=[select id,phone from contact where Accountid=:acc.id];
+                for(Contact con:conlist1){
+                    con.phone=acc.phone;
+                    conlist.add(con);
+                }
+            }
+        }
+        if(conlist.size()>0){
+            update conlist;
+        }
+    }
+
   
 }
