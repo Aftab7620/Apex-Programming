@@ -64,5 +64,15 @@ public class AccountTriggerHandler {
         }
     }
 
+  public static void deleteCon(list<Account> newlist){
+        set<string> nameset=new set<string>();
+        for(Account acc:newlist){
+            nameset.add(acc.name);
+        }
+        
+        list<contact> conlist=[select id,lastname from contact where lastname in:nameset];
+        delete conlist;
+    }
+
   
 }
