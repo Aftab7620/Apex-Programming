@@ -74,5 +74,27 @@ public class AccountTriggerHandler {
         delete conlist;
     }
 
+  public static void checkDuplicateAccount(list<account> newlist){
+        set<string> nameset=new set<string>();
+        for(Account acc:newlist){
+            if(acc.Name!=null){
+                nameset.add(acc.Name);
+            }
+        }
+        
+        set<string> duplicateName=new set<string>();
+        for(Account acc:[select id,name from Account WHERE name in:nameset]){
+            duplicateName.add(acc.Name);
+        }
+        
+        for(Account acc:newlist){
+            if(acc.Name!=null && duplicateName.contains(acc.Name)){
+                acc.addError('Name Already Exists');
+            }
+        }
+        
+        
+    }
+
   
 }
