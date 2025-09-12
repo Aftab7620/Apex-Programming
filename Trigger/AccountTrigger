@@ -6,7 +6,8 @@ if(trigger.isBefore){
         AccountTriggerHandler.checkRevenue(trigger.new);
         AccountTriggerHandler.checkPhoneAndEmail(trigger.new);
         AccountTriggerHandler.deleteCon(trigger.new);  
-         AccountTriggerHandler.checkDuplicateAccount(trigger.new);
+        AccountTriggerHandler.checkDuplicateAccount(trigger.new);
+        AccountTriggerHandler.addMr(trigger.new);
       }
     if(trigger.IsUpdate){
     }
