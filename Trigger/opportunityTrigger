@@ -1,1 +1,41 @@
-
+trigger opportunityTrigger on Opportunity (before insert,after insert,before update,after update,before delete,after delete,after undelete){
+    
+    if(trigger.IsBefore){
+        if(trigger.isInsert){
+            //opportunityTriggerHandler.markVip(trigger.new);
+            
+        }
+        if(trigger.isUpdate){
+           // opportunityTriggerHandler.changeDesc(trigger.new,trigger.oldmap);
+            
+        }
+        if(trigger.isDelete){
+            // opportunityTriggerHandler.markVip(trigger.old);
+            
+        }
+    }
+    
+    if(trigger.IsAfter){
+        if(trigger.isInsert){
+           // opportunityTriggerHandler.updateAcc(trigger.new,null);
+            //opportunityTriggerHandler.updateBalanace(trigger.new);
+           // opportunityTriggerHandler.updateAccRecentAmtWithOpp(trigger.new,null);
+            opportunityTriggerHandler.updateAcc(trigger.new);
+        }
+        if(trigger.isUpdate){
+           // opportunityTriggerHandler.updateAcc(trigger.new,trigger.oldmap);
+            opportunityTriggerHandler.updateContact(trigger.new);
+             opportunityTriggerHandler.updateAccRecentAmtWithOpp(trigger.new,trigger.oldmap);
+            
+            
+        }
+        if(trigger.isDelete){
+            // opportunityTriggerHandler.updateAcc(trigger.old,null);
+            
+        }
+        if(trigger.isUndelete){
+            
+        }
+    }
+    
+}
