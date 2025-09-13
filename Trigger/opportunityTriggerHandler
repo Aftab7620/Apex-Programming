@@ -1,4 +1,26 @@
 public class opportunityTriggerHandler{
 
+   //while cfraeting opp if associated account is vip then opp should alspo be vip
+    public static void markVip(list<opportunity> newlist){
+        set<id>accid=new set<id>();
+        for(Opportunity opp:newlist){
+            if(opp.AccountId!=null){
+                accid.add(opp.AccountId);
+            }
+        }
+        
+        list<Account> acclist=[select id,isVip__c from Account WHERE isVip__c=TRUE AND Id IN:accid];
+        set<id> accids=new set<id>();
+        for(Account acc:acclist){
+            accids.add(acc.id);
+        }
+        
+        for(Opportunity opp:newlist){
+            if(opp.AccountId != null){
+                opp.isVip__c=accids.contains(opp.AccountId);
+            }
+        }
+    }
+
 
 }
