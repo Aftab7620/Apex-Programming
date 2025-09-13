@@ -62,5 +62,27 @@ public class opportunityTriggerHandler{
            
         }
 
+   public static void updateBalanace(list<opportunity> newlist){
+        set<Id> accid=new set<id>();
+        list<Account> acclist=new list<Account>();
+        for(Opportunity opp:newlist){
+            if(opp.AccountId!=null){
+                accid.add(opp.AccountId);
+            }
+        }
+        
+        for(AggregateResult ag:[select AccountId,Sum(Amount) total From Opportunity WHERE AccountId IN:accid GROUP BY AccountId]){
+            Account acc=new Account();
+            acc.id=(id)ag.get('AccountId');
+            acc.Total_Amount__c	=(double)ag.get('total');
+            acclist.add(acc);
+            
+        }
+        
+        if(acclist.size()>0){
+            update acclist;
+        }
+    }
+
 
 }
