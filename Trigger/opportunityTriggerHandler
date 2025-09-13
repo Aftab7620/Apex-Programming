@@ -31,5 +31,36 @@ public class opportunityTriggerHandler{
     }
     }
 
+    //upate acc with related opp
+    public static void updateAcc(list<opportunity> opplist,map<id,opportunity> oldMap){
+         set<id> accid=new set<id>();
+        list<Account> acclist=new list<Account>();
+        if(opplist.size()>0){
+             for(Opportunity opp:opplist){
+            if(opp.AccountId!=null){
+                accid.add(opp.AccountId);
+            }
+             Opportunity oldOpp = oldMap.get(opp.ID);
+            if(opp.AccountId!=oldOpp.AccountId){
+                accId.add(oldOpp.AccountId);
+            }
+        }
+            
+        }
+       
+        for(AggregateResult ag:[select AccountId,count(Id) ct FROM Opportunity Where AccountId IN:accid GROUP BY AccountId]){
+             Account acc=new Account();
+            acc.id=(id)ag.get('AccountId');
+            acc.Total_Opportunities__c=(double)ag.get('ct');
+            acclist.add(acc);
+            
+            }
+        
+        if(acclist.size()>0){
+            update acclist;
+        }
+           
+        }
+
 
 }
