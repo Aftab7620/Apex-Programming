@@ -185,6 +185,27 @@ public static ContactTriggerHandler{
             update acclist;
         }
     }
+
+ public static void giveError(list<contact> newlist){
+        set<id> accid=new set<id>();
+        for(Contact con:newlist){
+            if(con.accountid!=null){
+                accid.add(con.AccountId);
+            }
+        }
+        
+        list<Account> acclist=[select id,(select id,AccountId from contacts) from Account WHERE Id IN:accid];
+        for(Contact con:newlist){
+            if(con.accountId!=null){
+                for(Account acc:acclist){
+                    Integer count=acc.contacts.size();
+                    if(count>2){
+                        con.addError('Max contact limit reached on account');
+                    }
+                }
+            }
+        }
+    }
     
     
 
