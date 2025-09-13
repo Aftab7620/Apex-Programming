@@ -120,6 +120,31 @@ public class opportunityTriggerHandler{
         }
     }
 
+   public static void updateAcc(list<opportunity> newlist){
+        set<id> accid=new set<id>();
+        for(Opportunity opp:newlist){
+            if(opp.AccountId!=null){
+                accid.add(opp.AccountId);
+            }
+        }
+        list<account> acclist2=new list<account>();
+        list<Account> acclist=[SELECT id,(select id,stagename from opportunities where stagename='Closed Won') from account where Id IN:accid];
+        for(Account acc:acclist){
+                integer ct=acc.opportunities.size();
+                if(ct>2){
+                    acc.Rating='Hot';
+                    acclist2.add(acc);
+                }else{
+                    acc.Rating='Warm';
+                    acclist2.add(acc);
+                }
+            }
+        
+        if(acclist2.size()>0){
+            update acclist2;
+        }
+        }
+
    
 
 
