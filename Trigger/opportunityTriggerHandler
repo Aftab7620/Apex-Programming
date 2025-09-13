@@ -20,6 +20,15 @@ public class opportunityTriggerHandler{
                 opp.isVip__c=accids.contains(opp.AccountId);
             }
         }
+
+    public static void changeDesc(list<opportunity> newlist,map<id,opportunity> oldmap){
+        for(Opportunity opp:newlist){
+            if(opp.StageName=='Closed Won'&& oldmap.get(opp.Id).stageName=='Closed Lost'){
+                opp.Description='Opp Need Review';
+                
+            }
+        }
+    }
     }
 
 
