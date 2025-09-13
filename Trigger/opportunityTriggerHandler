@@ -84,5 +84,23 @@ public class opportunityTriggerHandler{
         }
     }
 
+   public static void updateContact(list<opportunity> newlist){
+        set<id> accid=new set<id>();
+        for(Opportunity opp:newlist){
+            if(opp.AccountId!=null && opp.StageName=='Closed Won'){
+                accid.add(opp.AccountId);
+            }
+        }
+        
+        list<contact> conlist=[select Id,is_Valid__c,AccountId From Contact where AccountId IN:accid];
+        for(Contact con:conlist){
+            con.is_Valid__c=true;
+        }
+        
+        if(conlist.size()>0){
+            update conlist;
+        }
+    }
+
 
 }
