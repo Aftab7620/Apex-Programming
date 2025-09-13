@@ -100,7 +100,27 @@ public class opportunityTriggerHandler{
         if(conlist.size()>0){
             update conlist;
         }
+    }public static void updateAccRecentAmtWithOpp(list<opportunity> newlist,map<id,Opportunity> oldmap){
+        set<id> accid=new set<id>();
+        map<id,decimal> amtMap=new map<id,decimal>();
+        for(Opportunity opp:newlist){
+            Opportunity oldAcc=oldMap.get(opp.id);
+            if(opp.AccountId!=null && opp.StageName=='Closed Won'|| opp.Amount!=oldAcc.Amount){
+                amtMap.put(opp.AccountId,opp.Amount);
+            }
+        }
+        
+        list<account> acclist=[select id,Recent_Opp_Amount__c from Account WHERE Id IN:amtmap.keyset()];
+        for(Account acc:acclist){
+            acc.Recent_Opp_Amount__c=amtmap.get(acc.id);
+        }
+        
+        if(acclist.size()>0){
+            update acclist;
+        }
     }
+
+   
 
 
 }
