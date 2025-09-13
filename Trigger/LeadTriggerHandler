@@ -7,4 +7,30 @@ public class leadTriggerHandler {
             }
         }
     }
+
+
+    public static void convertLead(list<Lead> newlist){
+         List<Database.LeadConvert> leadConvert=new List<Database.LeadConvert>();
+        if(newlist!=null){
+            for(Lead l:newlist){
+                if(l.isConverted!=true){
+                    Database.LeadConvert lc=new Database.LeadConvert();
+                    lc.setLeadId(l.Id);
+                    lc.setDoNotCreateOpportunity(false);
+                    lc.setConvertedStatus('Closed - Converted');
+                    leadConvert.add(lc);
+                }
+            }
+        }
+        
+        if(leadConvert.size()>0){
+            List<Database.LeadConvertResult> result=Database.convertLead(leadConvert,false);
+            for(Database.LeadConvertResult res:result){
+                if(!res.isSuccess()){
+                    System.debug('Lead Conversion Failed : '+res.getErrors());
+                }
+            }
+        }
+
+    }
 }
