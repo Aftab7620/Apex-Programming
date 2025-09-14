@@ -1,5 +1,5 @@
 public class AccountTriggerHandler {
-
+//
   public static void AddBillingToShipping(list<account> newlist){
         for(Account acc:newlist){
             if(acc.name!=null)
