@@ -11,6 +11,7 @@ public class AccountTriggerHandler {
         }
     }
 
+//
    public static void checkRevenue(list<account> newlist){
         for(Account acc:newlist){
             if(acc.AnnualRevenue< 10000){
