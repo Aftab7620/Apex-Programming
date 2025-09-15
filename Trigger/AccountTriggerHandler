@@ -99,6 +99,7 @@ public class AccountTriggerHandler {
         
     }
 
+//
   public static void addMr(list<Account> newlist){
         for(Account acc:newlist){
             if(acc.Name!=null){
