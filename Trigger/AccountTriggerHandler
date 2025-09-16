@@ -11,7 +11,7 @@ public class AccountTriggerHandler {
         }
     }
 
-//
+//add error if revenue is less than 10000
    public static void checkRevenue(list<account> newlist){
         for(Account acc:newlist){
             if(acc.AnnualRevenue< 10000){
