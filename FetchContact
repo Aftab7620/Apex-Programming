@@ -13,6 +13,7 @@ public class FetchContact{
         return conlist;
     }
 
+
   //get contact rel to account
    public static list<contact> getContactRelToAcc(list<account> acclist){
         list<contact> conlist=[SELECT Id,Name ,AccountId FROM CONTACT WHERE AccountId IN:acclist];
