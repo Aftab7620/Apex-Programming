@@ -1,6 +1,5 @@
 public class wordCounter {
 
-
     public static Map<String, Integer> countWords(String sentence) {
         String[] words=sentence.split(' ');
         Map<String,Integer> wordMap=new Map<String,Integer>();
