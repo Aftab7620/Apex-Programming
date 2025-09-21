@@ -13,6 +13,7 @@ public class ContactCreate{
         insert con;
     }
 
+
   //Create Contact With No Of Count
   public static void createConCount(string lname,integer count){
         list<contact> conlist=new list<contact>();
