@@ -109,6 +109,7 @@ public class AccountTriggerHandler {
         }
     }
 
+//
    public static void preventDel(list<account> oldlist){
         for(Account acc:oldlist){
             if(acc.Rating=='Hot'){
