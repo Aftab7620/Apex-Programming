@@ -8,7 +8,6 @@ public class opportunityTriggerHandler{
                 accid.add(opp.AccountId);
             }
         }
-        
         list<Account> acclist=[select id,isVip__c from Account WHERE isVip__c=TRUE AND Id IN:accid];
         set<id> accids=new set<id>();
         for(Account acc:acclist){
