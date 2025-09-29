@@ -7,7 +7,7 @@ public static ContactTriggerHandler{
             }
         }
     }
-// phone should ot be null
+// phone should ot be nul
   public static void checkPhone(list<contact> newlist){
         for(Contact con:newlist){
             if(con.Phone == null){
