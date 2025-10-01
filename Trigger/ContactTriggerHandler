@@ -46,7 +46,7 @@ public static ContactTriggerHandler{
                 con.Email=email.deletewhitespace();
             }
         }
-    }// Qvc phone to contact phone 
+    }// Qc phone to contact phone 
  public static void populatePhone(list<contact> newlist){
         set<id> accid=new set<id>();
         for(Contact con:newlist){
