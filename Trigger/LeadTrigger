@@ -1,5 +1,5 @@
 trigger leadTrigger on Lead (before insert,after insert,before update,after update,after delete,before delete,after undelete) {
-    
+
     if(trigger.isBefore){
         if(trigger.isInsert){
             leadTriggerHandler.markRating(trigger.new);
