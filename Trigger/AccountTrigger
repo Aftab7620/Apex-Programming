@@ -2,7 +2,6 @@ trigger AccountTrigger on Account(Before insert,after insert,before update,after
 //Trigger Before Event
 if(trigger.isBefore){
     if(trigger.isInsert(){
-
         AccountTriggerHandler.AddBillingToShipping(trigger.new);
         AccountTriggerHandler.checkRevenue(trigger.new);
         AccountTriggerHandler.checkPhoneAndEmail(trigger.new);
