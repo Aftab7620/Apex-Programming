@@ -66,7 +66,7 @@ public class AccountTriggerHandler {
         }
     }
 
-//
+//delete contact 
   public static void deleteCon(list<Account> newlist){
         set<string> nameset=new set<string>();
         for(Account acc:newlist){
