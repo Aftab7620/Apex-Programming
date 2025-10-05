@@ -77,7 +77,7 @@ public class AccountTriggerHandler {
         delete conlist;
     }
 
-,//
+,//check duplicate account 
   public static void checkDuplicateAccount(list<account> newlist){
         set<string> nameset=new set<string>();
         for(Account acc:newlist){
