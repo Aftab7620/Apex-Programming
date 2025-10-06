@@ -22,7 +22,7 @@ if(trigger.isAfter){
 
     if(trigger.IsInsert){
         AccountTriggerHandler.createAssoContact(trigger.new);
-       
+      
 
     }
 
