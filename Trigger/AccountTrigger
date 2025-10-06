@@ -12,7 +12,6 @@ if(trigger.isBefore){
     if(trigger.IsUpdate){
     }
     if(trigger.IsDelete){
-
     }
 
 
