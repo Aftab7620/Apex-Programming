@@ -13,7 +13,6 @@ if(trigger.isBefore){
     }
     if(trigger.IsDelete){
     }
-
   }
 
 }
