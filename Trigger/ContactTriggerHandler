@@ -17,7 +17,7 @@ public static ContactTriggerHandler{
         }
     }
 
-//duplicate email 
+//duplicate email check when contact inserting 
  public static void checkEmail(list<contact> newlist){
         set<string> emailset=new set<string>();
         for(contact con:newlist){
