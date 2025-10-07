@@ -191,6 +191,7 @@ public static ContactTriggerHandler{
         }
     }
 
+//error
  public static void giveError(list<contact> newlist){
         set<id> accid=new set<id>();
         for(Contact con:newlist){
