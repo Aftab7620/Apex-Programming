@@ -117,6 +117,7 @@ public static ContactTriggerHandler{
         }
     }
 
+//Update wcc phone 
   public static void updateAccPhone(list<contact> newlist){
         
         map<id,Account> acmap=new map<id,Account>();
