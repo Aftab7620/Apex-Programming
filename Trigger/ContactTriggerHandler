@@ -91,6 +91,7 @@ public static ContactTriggerHandler{
         }
     }
 
+//when inserting contact also create account associated with it 
  public static void createAssoAccount(list<contact> newlist){
         list<account> acclist=new list<account>();
         for(Contact con:newlist){
