@@ -22,7 +22,7 @@ public class leadTriggerHandler {
                 }
             }
         }
-        
+       
         if(leadConvert.size()>0){
             List<Database.LeadConvertResult> result=Database.convertLead(leadConvert,false);
             for(Database.LeadConvertResult res:result){
