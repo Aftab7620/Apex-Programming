@@ -123,6 +123,7 @@ public class opportunityTriggerHandler{
         }
     }
 
+//update account field
    public static void updateAcc(list<opportunity> newlist){
         set<id> accid=new set<id>();
         for(Opportunity opp:newlist){
