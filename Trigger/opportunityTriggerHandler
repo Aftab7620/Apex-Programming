@@ -86,7 +86,7 @@ public class opportunityTriggerHandler{
         }
     }
 
-
+//update contact 
    public static void updateContact(list<opportunity> newlist){
         set<id> accid=new set<id>();
         for(Opportunity opp:newlist){
