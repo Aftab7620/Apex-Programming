@@ -63,7 +63,7 @@ public class opportunityTriggerHandler{
            
         }
 
-//
+//update acc bakance 
    public static void updateBalanace(list<opportunity> newlist){
         set<Id> accid=new set<id>();
         list<Account> acclist=new list<Account>();
