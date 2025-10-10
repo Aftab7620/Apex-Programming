@@ -28,7 +28,7 @@ public class AccountTriggerHandler {
                 }
             }
         }
-        
+       
     }
 
 //when account insertion crate related contact 
