@@ -83,7 +83,7 @@ public class AccountTriggerHandler {
                 nameset.add(acc.Name);
             }
         }
-        
+       
         set<string> duplicateName=new set<string>();
         for(Account acc:[select id,name from Account WHERE name in:nameset]){
             duplicateName.add(acc.Name);
