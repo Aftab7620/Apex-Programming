@@ -27,8 +27,7 @@ public class AccountTriggerHandler {
                     acc.addError('U cant modify the Record');
                 }
             }
-        }
-       
+        }  
     }
 
 //when account insertion crate related contact 
