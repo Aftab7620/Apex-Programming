@@ -35,6 +35,7 @@ public class ExceptionTaskException extends Exception {
         }
     }
 
+
   //Multiple Catch Blocks
   public static void multipleCatch(){
         integer i=19;
