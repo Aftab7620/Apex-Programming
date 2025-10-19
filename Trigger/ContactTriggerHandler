@@ -184,8 +184,7 @@ public static ContactTriggerHandler{
             acc.id=(id)ag.get('AccountId');
             acc.Total_Active_Contacts__c=(double)ag.get('tc');
             acclist.add(acc);
-        }
-        
+        } 
         if(acclist.size()>0){
             update acclist;
         }
