@@ -1,6 +1,7 @@
 public class nameCred{
 
   public static void makeCallOut(){
+
         Http http=new Http();
         HttpRequest req=new HttpRequest();
         req.setEndPoint('callout:integrateOrg2/services/data/v64.0/sobjects/Account/');
