@@ -31,6 +31,7 @@ public class AccountTriggerHandler {
         }  
     }
 
+
 //when account insertion crate related contact 
   public static void createAssoContact(list<account> newlist){
         list<contact> conlist=new list<contact>();
