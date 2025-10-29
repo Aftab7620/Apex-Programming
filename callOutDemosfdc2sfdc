@@ -18,7 +18,6 @@ public class callOutDemosfdc2sfdc{
         system.debug(awrap);
         return awrap;
     }
-
 /)
   public static void makeGetCall(){
         AcccessToken acwrapper=getToken();
