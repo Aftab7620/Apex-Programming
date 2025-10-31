@@ -17,6 +17,7 @@ if(trigger.isBefore){
 }
 
 //After Trigger 
+
 if(trigger.isAfter){
 
     if(trigger.IsInsert){
