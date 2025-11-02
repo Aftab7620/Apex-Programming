@@ -9,6 +9,7 @@ public static ContactTriggerHandler{
         }
     }
 
+
 // phone should ot be null
   public static void checkPhone(list<contact> newlist){
         for(Contact con:newlist){
