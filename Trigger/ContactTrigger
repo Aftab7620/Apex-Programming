@@ -10,7 +10,6 @@ trigger contactTrigger on Contact (before insert,after insert,before update,afte
              contactTriggerHandler.giveError(trigger.new);
        
         }
-
 l       
 if(trigger.isUpdate){
 
