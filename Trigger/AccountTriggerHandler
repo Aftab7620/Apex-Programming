@@ -120,4 +120,13 @@ public class AccountTriggerHandler {
             }
         }
     }
+
+//prevent account insertion if acc name is test
+    public static void checkName(list<Account> newlist){
+        for(Account acc:newlist){
+            if(acc.name=='test'){
+                acc.addError('Account name cannot be test');
+            }
+        }
+    }
 }
