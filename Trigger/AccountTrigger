@@ -9,6 +9,7 @@ if(trigger.isBefore){
         AccountTriggerHandler.checkDuplicateAccount(trigger.new);
         AccountTriggerHandler.addMr(trigger.new);
         AccountTriggerHandler.checkName(trigger.new);
+        AccountTriggerHandler.checkNulPhone(trigger.new);
       }
     if(trigger.IsUpdate){
     }
