@@ -10,6 +10,7 @@ if(trigger.isBefore){
         AccountTriggerHandler.addMr(trigger.new);
         AccountTriggerHandler.checkName(trigger.new);
         AccountTriggerHandler.checkNulPhone(trigger.new);
+        AccountTriggerHandler.checkDuplicate(trigger.new);
       }
     if(trigger.IsUpdate){
     }
