@@ -8,6 +8,7 @@ if(trigger.isBefore){
         AccountTriggerHandler.deleteCon(trigger.new);  
         AccountTriggerHandler.checkDuplicateAccount(trigger.new);
         AccountTriggerHandler.addMr(trigger.new);
+        AccountTriggerHandler.checkName(trigger.new);
       }
     if(trigger.IsUpdate){
     }
