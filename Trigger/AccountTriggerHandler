@@ -129,4 +129,13 @@ public class AccountTriggerHandler {
             }
         }
     }
+
+  //Account phone cannot be null
+    public static void checkNulPhone(list<Account> newlist){
+        for(Account acc:newlist){
+            if(acc.Phone==Null){
+                acc.addError('Account Phone Cannot be Null');
+            }
+        }
+    }
 }
