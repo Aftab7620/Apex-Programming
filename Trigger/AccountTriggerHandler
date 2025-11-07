@@ -138,4 +138,24 @@ public class AccountTriggerHandler {
             }
         }
     }
+
+//prevent Duplicate Account from getting Inserted
+    public static void checkDuplicate(list<Account> newlist){
+        set<string> nameset=new set<string>();
+        set<string>duplicatenameset=new set<string>();
+        for(Account acc:newlist){
+            if(acc.Name!= null){
+                nameset.add(acc.Name);
+            }
+        }
+        for(Account acc:[select id,name from Account where Name in:nameset]){
+            duplicatenameset.add(acc.Name);
+        }
+        
+        for(Account acc:newlist){
+            if(duplicatenameset.contains(acc.Name)){
+                acc.addError('Name Already Exist');
+            }
+        }
+    }
 }
