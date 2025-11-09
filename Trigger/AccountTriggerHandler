@@ -162,6 +162,7 @@ public class AccountTriggerHandler {
 //Add billing Address to Shipping Address
     public static void AddBilingToShipping(list<Account> newlist){
         for(Account acc:newlist){
+
             if( acc.BillingStreet != null ||
                 acc.BillingCity != null ||
                 acc.BillingState != null ||
