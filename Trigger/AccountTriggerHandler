@@ -22,7 +22,6 @@ public class AccountTriggerHandler {
     }
 
 //prevent name updation 
-
   public static void checkNewName(list<account> newlist,map<id,Account> oldmap){
         for(Account acc:newlist){
             Account oldAcc=oldmap.get(acc.id);{
