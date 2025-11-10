@@ -256,4 +256,25 @@ public static ContactTriggerHandler{
             }
         }
     }
+
+ //When contact is inserted add Account phone to contact phone
+    public static void AddAccountPhone(list<contact> newlist){
+        set<id> accid=new set<id>();
+        for(Contact con:newlist){
+            if(con.AccountId!= Null){
+                accid.add(con.AccountId);
+            }
+        }
+        
+       map<id,Account> accmap=new map<id,Account>();
+        for(Account acc:[SELECT Id,Phone FROM Account Where Id IN:accid]){
+            accmap.put(acc.id,acc);
+            
+        }
+        for(contact con:newlist){
+            if(con.phone == null && accmap.containskey(con.AccountId)){
+                con.Phone=accmap.get(con.AccountId).phone;
+            }
+        }
+      }
 }
