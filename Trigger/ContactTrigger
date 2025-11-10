@@ -9,6 +9,7 @@ trigger contactTrigger on Contact (before insert,after insert,before update,afte
              contactTriggerHandler.markConVip(trigger.new);
              contactTriggerHandler.giveError(trigger.new);
                contactTriggerHandler.checkLastName(trigger.new);
+                contactTriggerHandler.checkPhone(trigger.new);
        
         }
 l       
