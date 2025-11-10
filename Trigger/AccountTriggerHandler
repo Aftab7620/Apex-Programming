@@ -199,5 +199,22 @@ public class AccountTriggerHandler {
             conlist.add(con);
         }
         if(conlist.size()>0) insert conlist;
-    }  
+    } 
+
+ //whenever account phone is updated also update its contact phone
+    public static void updateAccPhoneWithConPhone(list<Account> newlist,map<id,Account> oldmap){
+        list<contact> updatelist=new list<contact>();
+        for(Account acc:newlist){
+            Account a=oldmap.get(acc.id);
+            if(acc.Phone!=a.Phone){
+                list<contact> conlist=[select id,phone,AccountId from contact where AccountId=:acc.id];
+                for(contact c:conlist){
+                    c.phone=acc.Phone;
+                    updatelist.add(c);
+                    
+                }
+            }
+        }
+        if(updatelist.size()>0) update updatelist;
+    }
 }
