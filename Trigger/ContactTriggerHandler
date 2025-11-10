@@ -277,4 +277,28 @@ public static ContactTriggerHandler{
             }
         }
       }
+
+//when contact is created Also create Account and relate it with that account
+    public static void createAssoAcc(list<contact> newlist){
+        list<Account> acclist=new list<Account>();
+        for(Contact con:newlist){
+            if(con.AccountId==Null){
+                Account acc=new Account();
+                acc.name=con.LastName;
+                acclist.add(acc);
+            }
+        }
+        if(acclist.size()>0) insert acclist;
+        map<string,id> accmap=new map<string,id>();
+        for(Account acc:acclist){
+            accmap.put(acc.Name,acc.id);
+        }
+        
+        for(Contact con:newlist){
+            if(con.AccountId==Null){
+                con.AccountId=accmap.get(con.LastName);
+            }
+        }
+        
+    }
 }
