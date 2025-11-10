@@ -214,5 +214,14 @@ public static ContactTriggerHandler{
                 }
             }
         }
-    }      
+    }
+
+ //Lastname should not be test
+    public static void checkLastName(list<contact> newlist){
+        for(Contact con:newlist){
+            if(con.lastname=='test'){
+                con.addError('Lastname Cannot be Test');
+            }
+        }
+    }
 }
