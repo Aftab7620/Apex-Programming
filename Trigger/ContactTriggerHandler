@@ -224,4 +224,14 @@ public static ContactTriggerHandler{
             }
         }
     }
+
+ //phone should not be blank
+    public static void checkPhone(list<contact> newlist){
+        for(Contact con:newlist){
+            if(con.phone== null){
+                con.addError('Phone cannot be Null');
+            }
+        }
+           
+    }
 }
