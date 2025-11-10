@@ -234,4 +234,26 @@ public static ContactTriggerHandler{
         }
            
     }
+
+ //check for duplicate email
+    public static void checkDuplicateEmail(list<contact> newlist){
+        set<string> emailset=new set<string>();
+        for(Contact con:newlist){
+            if(con.Email!=null){
+                emailset.add(con.Email);
+            }
+        }
+        set<string> duplicateSet=new set<string>();
+        for(Contact con:[select id,Email from Contact where Email in : emailset]){
+            if(con.Email!=null){
+                duplicateSet.add(con.Email);
+            }
+        }
+        
+        for(Contact con:newlist){
+            if(con.Email!=Null && duplicateSet.contains(con.Email)){
+                con.addError('Email Already Exist');
+            }
+        }
+    }
 }
