@@ -14,6 +14,7 @@ if(trigger.isBefore){
         AccountTriggerHandler.AddBilingToShipping(trigger.new);
       }
     if(trigger.IsUpdate){
+         AccountTriggerHandler.preventNameUpdate(trigger.new,trigger.oldmap);
     }
     if(trigger.IsDelete){
     }
