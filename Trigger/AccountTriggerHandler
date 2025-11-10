@@ -177,4 +177,15 @@ public class AccountTriggerHandler {
             }
         }
     }
+
+ //Name should not be updated
+    public static void preventNameUpdate(list<Account> newlist,map<id,Account> oldMap){
+        for(Account acc:newlist){
+            Account a=oldMap.get(acc.id);
+            if(acc.Name!=a.Name){
+                acc.addError('Cannot Update Name');
+            }
+            
+        }
+    }
 }
