@@ -188,4 +188,16 @@ public class AccountTriggerHandler {
             
         }
     }
+
+//Create Associated Contact when Account Inserted
+    public static void createAssoContact(list<Account> newlist){
+        list<contact> conlist=new list<contact>();
+        for(Account acc:newlist){
+            Contact con=new Contact();
+            con.LastName=acc.Name+' contact';
+            con.AccountId=acc.id;
+            conlist.add(con);
+        }
+        if(conlist.size()>0) insert conlist;
+    }  
 }
