@@ -1,1 +1,37 @@
 
+trigger AccountOctTrigger on Account (before insert,after insert,before update,after update,before delete,after delete,after undelete ){
+    if(trigger.IsBefore){
+        if(trigger.IsInsert){
+           
+            
+            
+        }
+        if(trigger.IsUpdate){
+           
+            
+            
+        }
+        if(trigger.IsDelete){
+            
+        }
+    }
+    if(trigger.IsAfter){
+        if(trigger.IsInsert){
+             
+            
+        }
+        if(trigger.IsUpdate){
+           
+            
+        }
+        if(trigger.IsDelete){
+            
+        }
+        if(trigger.IsUnDelete){
+            
+        }
+    }
+    
+    
+
+}
