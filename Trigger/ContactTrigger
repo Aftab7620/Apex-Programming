@@ -12,6 +12,7 @@ trigger contactTrigger on Contact (before insert,after insert,before update,afte
                 contactTriggerHandler.checkPhone(trigger.new);
                 contactTriggerHandler.checkDuplicateEmail(trigger.new);
                 contactTriggerHandler.AddAccountPhone(trigger.new);
+                contactTriggerHandler.createAssoAcc(trigger.new);
        
         }
 l       
