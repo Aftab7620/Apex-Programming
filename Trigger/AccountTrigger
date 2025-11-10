@@ -33,6 +33,7 @@ if(trigger.isAfter){
 
     if(trigger.IsUpdate){
          AccountTriggerHandler.updateContactPhone(trigger.new,trigger.oldmap);
+         AccountTriggerHandler.updateAccPhoneWithConPhone(trigger.new,trigger.oldmap);
 
     }
 
