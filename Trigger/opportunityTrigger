@@ -2,8 +2,7 @@ trigger opportunityTrigger on Opportunity (before insert,after insert,before upd
     
     if(trigger.IsBefore){
         if(trigger.isInsert){
-            //opportunityTriggerHandler.markVip(trigger.new);
-            
+            //opportunityTriggerHandler.markVip(trigger.new); 
         }
         if(trigger.isUpdate){
            // opportunityTriggerHandler.changeDesc(trigger.new,trigger.oldmap);
