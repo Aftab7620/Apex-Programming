@@ -21,6 +21,7 @@ trigger opportunityTrigger on Opportunity (before insert,after insert,before upd
            // opportunityTriggerHandler.updateAccRecentAmtWithOpp(trigger.new,null);
             opportunityTriggerHandler.updateAcc(trigger.new);
         }
+
         if(trigger.isUpdate){
            // opportunityTriggerHandler.updateAcc(trigger.new,trigger.oldmap);
             opportunityTriggerHandler.updateContact(trigger.new);
