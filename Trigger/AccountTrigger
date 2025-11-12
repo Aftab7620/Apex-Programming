@@ -17,6 +17,7 @@ if(trigger.isBefore){
     if(trigger.IsUpdate){
          AccountTriggerHandler.preventNameUpdate(trigger.new,trigger.oldmap);
          AccountTriggerHandler.restrictAccUpdate(trigger.new,trigger.oldmap);
+         AccountTriggerHandler.restrictUpdatte(trigger.new);
     }
     if(trigger.IsDelete){
     }
