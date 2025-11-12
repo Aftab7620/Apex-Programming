@@ -217,4 +217,19 @@ public class AccountTriggerHandler {
         }
         if(updatelist.size()>0) update updatelist;
     }
+
+ public static void updateContactMailCity(list<Account> newlist,map<id,Account> oldmap){
+        list<contact> clist=new list<contact>();
+        for(Account acc:newlist){
+            Account a=oldmap.get(acc.id);
+            if(acc.BillingCity!=a.BillingCity){
+                for(Contact con:[select id,MailingCity,AccountId from contact where Accountid =:acc.id]){
+                    con.MailingCity=acc.BillingCity;
+                    clist.add(con);
+                    
+                }
+            }
+        }
+        if(clist.size()>0) update clist;
+    }
 }
