@@ -255,4 +255,22 @@ public class AccountTriggerHandler {
             
         }
     }
+
+ //When ever the Account is created with Industry as Banking then create a contact for account,
+    // Contact Lastname as Account name and contact phone as account phone
+    
+    public static void createContact(list<Account> newlist){
+        list<contact> conlist=new list<contact>();
+        for(Account acc:newlist){
+            if(acc.Industry=='Banking'){
+                Contact con=new Contact();
+                con.LastName=acc.Name;
+                con.Phone=acc.Phone;
+                con.AccountId=acc.Id;
+                conlist.add(con);
+            }
+        }
+        if(conlist.size()>0) insert conlist;
+    }
+
 }
