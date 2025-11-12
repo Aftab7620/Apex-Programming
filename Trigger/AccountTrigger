@@ -20,6 +20,7 @@ if(trigger.isBefore){
          AccountTriggerHandler.restrictUpdatte(trigger.new);
     }
     if(trigger.IsDelete){
+         AccountTriggerHandler.onlyAdminDeleteAccount(trigger.old);
     }
   }
 }
