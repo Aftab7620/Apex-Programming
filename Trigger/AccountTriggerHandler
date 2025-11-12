@@ -243,4 +243,16 @@ public class AccountTriggerHandler {
             
         }
     }
+
+ public static void restrictAccUpdate(list<Account> newlist,map<id,Account> oldmap){
+        for(Account acc:newlist){
+            for(Contact con:[select id,Email,AccountId from contact where AccountId=:acc.id]){
+                if(con.Email==Null){
+                    acc.addError('cannot update the Account');
+                }
+                
+            }
+            
+        }
+    }
 }
