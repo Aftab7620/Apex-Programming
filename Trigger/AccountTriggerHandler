@@ -232,4 +232,15 @@ public class AccountTriggerHandler {
         }
         if(clist.size()>0) update clist;
     }
+
+ public static void onlyAdminDeleteAccount(list<Account> oldlist){
+        String profname=[Select Id,Name from Profile where Id=:userInfo.getProfileId()].name;
+        system.debug(profname);
+        if(profname!='System Administrator'){
+            for(Account acc:oldlist){
+                acc.addError('cannot del account');
+            }
+            
+        }
+    }
 }
