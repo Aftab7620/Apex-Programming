@@ -282,4 +282,19 @@ public class AccountTriggerHandler {
         }
     }
 
+public static void updateOpp(list<Account> newlist,map<id,Account> oldMap){
+        set<id> accid=new set<id>();
+        for(Account acc:newlist){
+            Account a=oldmap.get(acc.Id);
+            if(a.Active__c=='Yes' && acc.Active__c=='No'){
+                accid.add(acc.id);
+            }
+        }
+        list<Opportunity> opplist=[SELECT Id,AccountId,stagename from opportunity where stagename!='Closed Won' and AccountId IN:accid];
+        for(Opportunity opp:opplist){
+            opp.StageName='Closed Lost';
+        }
+        
+        if(opplist.size()>0) update opplist;
+    }
 }
