@@ -297,4 +297,11 @@ public static void updateOpp(list<Account> newlist,map<id,Account> oldMap){
         
         if(opplist.size()>0) update opplist;
     }
+public static void restrictUpdatte(list<Account> newlist){
+        for(Account acc:newlist){
+            if(acc.CreatedDate.date()<date.today().addDays(-7)){
+                acc.addError('cannoot edit recoord ');
+            }
+        }
+    }
 }
