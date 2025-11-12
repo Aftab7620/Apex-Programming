@@ -12,6 +12,7 @@ if(trigger.isBefore){
         AccountTriggerHandler.checkNulPhone(trigger.new);
         AccountTriggerHandler.checkDuplicate(trigger.new);
         AccountTriggerHandler.AddBilingToShipping(trigger.new);
+        AccountTriggerHandler.addAccount(trigger.new);
       }
     if(trigger.IsUpdate){
          AccountTriggerHandler.preventNameUpdate(trigger.new,trigger.oldmap);
