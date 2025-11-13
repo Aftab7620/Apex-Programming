@@ -1,1 +1,4 @@
+trigger caseTrigger on case {
 
+
+}
