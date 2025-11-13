@@ -9,5 +9,18 @@ public class caseTriggerHandler{
         }
     }
 
+   public static void updateAcc(list<case> newlist){
+        list<Account> acclist=new list<Account>();
+        for(Case c:newlist){
+            if(c.AccountId!=null){
+                Account acc=new Account();
+                acc.id=c.AccountId;
+                acc.Latest_Case_No__c=c.CaseNumber;
+                acclist.add(acc);
+            }
+        }
+        if(acclist.size()>0) update acclist;
+    }
+
 
 }
