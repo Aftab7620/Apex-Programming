@@ -5,6 +5,13 @@ trigger caseTrigger on case (before insert,after insert,before update,after upda
             
         }
     }
-
+     if(trigger.isAfter){
+        if(trigger.IsInsert){
+           
+             caseTriggerHandler.updateAcc(trigger.new);
+            
+         
+        }
+    }
 
 }
