@@ -1,4 +1,13 @@
 public class caseTriggerHandler{
 
+   public static void setStatus(list<case> newlist){
+        for(Case c:newlist){
+            if(c.Origin=='Email'){
+                c.Status='New';
+                c.Priority='Medium';
+            }
+        }
+    }
+
 
 }
