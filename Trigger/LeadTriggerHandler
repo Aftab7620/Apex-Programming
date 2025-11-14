@@ -10,7 +10,7 @@ public class leadTriggerHandler {
 
 
 //lead conversion 
-
+l
     public static void convertLead(list<Lead> newlist){
          List<Database.LeadConvert> leadConvert=new List<Database.LeadConvert>();
         if(newlist!=null){
