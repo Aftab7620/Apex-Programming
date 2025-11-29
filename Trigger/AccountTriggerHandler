@@ -80,6 +80,7 @@ public static void updateContactPhone(list<Account> newlist,map<id,account>oldma
     }
 
 ,//check duplicate account 
+
   public static void checkDuplicateAccount(list<account> newlist){
         set<string> nameset=new set<string>();
         for(Account acc:newlist){
