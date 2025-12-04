@@ -8,7 +8,7 @@ trigger AccountOctTrigger on Account (before insert,after insert,before update,a
         }
         if(trigger.IsUpdate){
                        
-            
+           
         }
         if(trigger.IsDelete){
             
