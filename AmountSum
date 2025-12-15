@@ -8,6 +8,6 @@ public class AmountSum{
         for(Opportunity opp:oplist){
             amount=amount+opp.amount;
         }
-        system.debug(amount);
+        system.debug(amount); 
     }
 }
