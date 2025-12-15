@@ -14,6 +14,7 @@ if(trigger.isBefore){
         AccountTriggerHandler.checkDuplicate(trigger.new);
         AccountTriggerHandler.AddBilingToShipping(trigger.new);
         AccountTriggerHandler.addAccount(trigger.new);
+
       }
 
     if(trigger.IsUpdate){
