@@ -1,5 +1,4 @@
 public class caseTriggerHandler{
-
   //set status to new 
    public static void setStatus(list<case> newlist){
         for(Case c:newlist){
