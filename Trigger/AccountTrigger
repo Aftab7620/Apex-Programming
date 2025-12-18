@@ -48,7 +48,7 @@ if(trigger.isAfter){
     if(trigger.isDelete){
         AccountTriggerHandler.preventDel(trigger.old);
 
-    }
+    
 
     if(trigger.isUndelete){
 
