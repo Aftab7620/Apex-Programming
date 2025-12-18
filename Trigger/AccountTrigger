@@ -16,7 +16,6 @@ l
         AccountTriggerHandler.addAccount(trigger.new);
 
       }
-
     if(trigger.IsUpdate){
 
          AccountTriggerHandler.preventNameUpdate(trigger.new,trigger.oldmap);
