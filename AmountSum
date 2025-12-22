@@ -11,3 +11,4 @@ public class AmountSum{
         system.debug(amount); 
     }
 }
+}
