@@ -234,6 +234,7 @@ l
     }
 
  //check for duplicate email
+
     public static void checkDuplicateEmail(list<contact> newlist){
         set<string> emailset=new set<string>();
         for(Contact con:newlist){
