@@ -38,7 +38,6 @@ public static ContactTriggerHandler{
                 con.addError('Email Already Present in Object');
             }
         }
- 
 }
 
 //populate email with last name
