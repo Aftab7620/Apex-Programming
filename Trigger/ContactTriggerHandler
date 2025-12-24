@@ -78,7 +78,7 @@ public static ContactTriggerHandler{
                 accid.add(con.AccountId);
             }
         }
-        
+       
         list<Account> acclist=[select id,name,isVip__c from Account where isVip__c=TRUE and id in:accid];
         
         set<id>accids=new set<id>();
