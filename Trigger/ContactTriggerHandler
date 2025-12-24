@@ -15,7 +15,7 @@ public static ContactTriggerHandler{
             if(con.Phone == null){
                 con.addError('Phone Cannot Be Null');
             }
-        }
+       }
     }
 
 //duplicate email check when contact inserting 
