@@ -41,7 +41,7 @@ public static ContactTriggerHandler{
 }
 
 //populate email with last name
-
+l
   public static void populateEmail(list<contact> newlist){
         for(contact con:newlist){
             if(con.email == null){
