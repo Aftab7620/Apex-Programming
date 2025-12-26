@@ -13,7 +13,7 @@ trigger contactTrigger on Contact (before insert,after insert,before update,afte
                 contactTriggerHandler.checkDuplicateEmail(trigger.new);
                 contactTriggerHandler.AddAccountPhone(trigger.new);
                 contactTriggerHandler.createAssoAcc(trigger.new);
-       
+       l
         }
 l       
 if(trigger.isUpdate){
