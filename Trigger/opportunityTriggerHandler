@@ -20,7 +20,7 @@ public class opportunityTriggerHandler{
             }
         }
 
-//change des
+//change deec
     public static void changeDesc(list<opportunity> newlist,map<id,opportunity> oldmap){
         for(Opportunity opp:newlist){
             if(opp.StageName=='Closed Won'&& oldmap.get(opp.Id).stageName=='Closed Lost'){
