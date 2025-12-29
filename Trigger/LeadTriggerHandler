@@ -1,5 +1,4 @@
 public class leadTriggerHandler {
-
 //if learsorve web then rating hot
     public static void markRating(list<lead> newlist){
         for(Lead ld:newlist){
