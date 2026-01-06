@@ -6,6 +6,7 @@ public class opportunityTriggerHandler{
         for(Opportunity opp:newlist){
             if(opp.AccountId!=null){
                 accid.add(opp.AccountId);
+
             }
         }
         list<Account> acclist=[select id,isVip__c from Account WHERE isVip__c=TRUE AND Id IN:accid];
