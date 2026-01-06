@@ -5,7 +5,7 @@ trigger leadTrigger on Lead (before insert,after insert,before update,after upda
             leadTriggerHandler.markRating(trigger.new);
         }
     }
-   
+  
     if(trigger.isAfter){
         if(trigger.isInsert){
             leadTriggerHandler.convertLead(trigger.new);
