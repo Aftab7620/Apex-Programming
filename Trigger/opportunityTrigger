@@ -6,7 +6,7 @@ trigger opportunityTrigger on Opportunity (before insert,after insert,before upd
         }
         if(trigger.isUpdate){
            // opportunityTriggerHandler.changeDesc(trigger.new,trigger.oldmap);
-            
+           
         }
         if(trigger.isDelete){
             // opportunityTriggerHandler.markVip(trigger.old);
