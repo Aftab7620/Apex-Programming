@@ -16,7 +16,6 @@ trigger opportunityTrigger on Opportunity (before insert,after insert,before upd
     
     if(trigger.IsAfter){
         if(trigger.isInsert){
-
            // opportunityTriggerHandler.updateAcc(trigger.new,null);
             //opportunityTriggerHandler.updateBalanace(trigger.new);
            // opportunityTriggerHandler.updateAccRecentAmtWithOpp(trigger.new,null);
