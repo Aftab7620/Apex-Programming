@@ -25,7 +25,7 @@ public class ExceptionTaskException extends Exception {
        
     }
 
-  //DML Exception Handling
+  //DML Exception Handlin
   public static void DmlExp(){
         try{
             Contact con=new Contact();
