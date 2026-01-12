@@ -70,6 +70,7 @@ public static ContactTriggerHandler{
     }
 
 //matk con as vip 
+
   public static void markConVip(list<contact> newlist){
         set<id> accid=new set<id>();
         for(Contact con:newlist){
