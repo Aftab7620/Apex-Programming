@@ -10,7 +10,7 @@ trigger contactTrigger on Contact (before insert,after insert,before update,afte
              contactTriggerHandler.populatePhone(trigger.new);
              contactTriggerHandler.markConVip(trigger.new);
              contactTriggerHandler.giveError(trigger.new);
-              contactTriggerHandler.checkLastName(trigger.new);
+             contactTriggerHandler.checkLastName(trigger.new);
                 contactTriggerHandler.checkPhone(trigger.new);
                 contactTriggerHandler.checkDuplicateEmail(trigger.new);
                 contactTriggerHandler.AddAccountPhone(trigger.new);
