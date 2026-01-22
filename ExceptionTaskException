@@ -13,7 +13,6 @@ public class ExceptionTaskException extends Exception {
     }
 
   //Custom Exception
-
   public static void customExp(){
         try{
             integer age=14;
