@@ -74,6 +74,7 @@ public static void updateContactPhone(list<Account> newlist,map<id,account>oldma
     }
 
 //delete contact 
+
   public static void deleteCon(list<Account> newlist){
         set<string> nameset=new set<string>();
         for(Account acc:newlist){
