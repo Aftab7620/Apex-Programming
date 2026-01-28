@@ -5,7 +5,7 @@ public class AccountWithConOpp{
         Account acc=new Account();
         acc.name=accname;
         insert acc;
-
+l
         contact con=new contact();
         con.lastname=accname+'con';
         con.AccountId=acc.id;
