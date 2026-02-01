@@ -35,6 +35,7 @@ public static void checkRevenue(list<account> newlist){
 
 
 //when account insertion crate related contact
+
   public static void createAssoContact(list<account> newlist){
         list<contact> conlist=new list<contact>();
         for(Account acc:newlist){
