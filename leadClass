@@ -1,5 +1,5 @@
 public class leadClass{
-
+//
    Public Static Void SearchLead(String Searchword)
     {
         String LeadsQuery='SELECT Id,Lastname,Title,Email FROM Lead ';
