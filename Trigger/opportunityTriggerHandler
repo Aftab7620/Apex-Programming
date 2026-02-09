@@ -34,6 +34,7 @@ public class opportunityTriggerHandler{
  }
 l
     //upate acc with related opp
+
     public static void updateAcc(list<opportunity> opplist,map<id,opportunity> oldMap){
          set<id> accid=new set<id>();
         list<Account> acclist=new list<Account>();
