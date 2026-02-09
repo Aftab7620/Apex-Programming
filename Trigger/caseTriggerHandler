@@ -10,6 +10,7 @@ public class caseTriggerHandler{
         }
     }
 
+
    public static void updateAcc(list<case> newlist){
         list<Account> acclist=new list<Account>();
         for(Case c:newlist){
