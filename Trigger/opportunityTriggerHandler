@@ -1,6 +1,7 @@
 public class opportunityTriggerHandler{
 
    //while cfraeting opp if associated account is vip then opp should alspo be vip
+
     public static void markVip(list<opportunity> newlist){
         set<id>accid=new set<id>();
         for(Opportunity opp:newlist){
