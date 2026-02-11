@@ -2,7 +2,7 @@ public class leadTriggerHandler {
 
 //if learsorve web then rating hot
 
-    public static void markRating(list<lead> newlist){
+   public static void markRating(list<lead> newlist){
         for(Lead ld:newlist){
             if(ld.leadSource=='Web'){
                 ld.rating='Hot';
