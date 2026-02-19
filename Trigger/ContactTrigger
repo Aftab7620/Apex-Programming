@@ -29,7 +29,7 @@ if(trigger.isUpdate)
             contactTriggerHandler.updateAccPhone(trigger.new);
             contactTriggerHandler.updateAccWithContactCount(trigger.new);
             contactTriggerHandler.aggAccUpdate(trigger.new);
-            
+           
         }
         if(trigger.isUpdate){
             contactTriggerHandler.backup(trigger.old);
