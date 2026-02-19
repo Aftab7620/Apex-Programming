@@ -11,7 +11,7 @@ trigger caseTrigger on case (before insert,after insert,before update,after upda
            
              caseTriggerHandler.updateAcc(trigger.new);
          
-        
+       
         }
     }
 
