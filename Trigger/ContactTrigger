@@ -37,7 +37,7 @@ if(trigger.isUpdate)
         }
         if(trigger.isDelete){
              contactTriggerHandler.updateAccWithContactCount(trigger.new);
-             contactTriggerHandler.aggAccUpdate(trigger.old);
+            contactTriggerHandler.aggAccUpdate(trigger.old);
             
         }
         if(trigger.isUndelete){
