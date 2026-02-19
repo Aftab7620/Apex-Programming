@@ -12,7 +12,7 @@ public class opportunityTriggerHandler{
         set<id> accids=new set<id>();
         for(Account acc:acclist){
             accids.add(acc.id);
-        }.
+        }
         for(Opportunity opp:newlist){
             if(opp.AccountId != null){
                 opp.isVip__c=accids.contains(opp.AccountId);
