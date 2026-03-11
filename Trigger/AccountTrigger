@@ -3,7 +3,7 @@ jtrigger AccountTrigger on Account(Before insert,after insert,before update,afte
 if(trigger.isBefore){
     if(trigger.isInsert(){
 
-      l  AccountTriggerHandler.AddBillingToShipping(trigger.new);
+        AccountTriggerHandler.AddBillingToShipping(trigger.new);
         AccountTriggerHandler.checkRevenue(trigger.new);
         AccountTriggerHandler.checkPhoneAndEmail(trigger.new);
         AccountTriggerHandler.deleteCon(trigger.new);  
