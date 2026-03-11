@@ -25,7 +25,6 @@ if(trigger.isBefore){
     }
 
     if(trigger.IsDelete){
-
          AccountTriggerHandler.onlyAdminDeleteAccount(trigger.old);
     }
   }
