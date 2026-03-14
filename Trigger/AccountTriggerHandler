@@ -51,7 +51,6 @@ public static void checkRevenue(list<account> newlist){
         }
     }
   //whenever the account phone get updated also update its related contact phone 
-
 public static void updateContactPhone(list<Account> newlist,map<id,account>oldmap){
         list<contact> conlist=new list<contact>();
         for(Account acc:newlist){
