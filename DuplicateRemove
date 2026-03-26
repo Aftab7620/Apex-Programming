@@ -1,4 +1,5 @@
-public class DuplicateRemove{
+public class DuplicateRemove
+
 //Method to Remove Duplicates From List
   public static list<integer> removeDuplicates(list<integer> numbers){
         set<integer> newset=new set<integer>();
