@@ -1,4 +1,5 @@
 public class GetFirstNonRepeatNo{
+
    //get firstnon repeating no
    public static String getFirstNonRepeatingChar(String input) {
         Map<String, Integer> maps=new Map<String, Integer>();
