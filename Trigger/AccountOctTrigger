@@ -3,7 +3,7 @@ trigger AccountOctTrigger on Account (before insert,after insert,before update,a
     if(trigger.IsBefore){
         if(trigger.IsInsert){
           
-      
+     
             
         }
         if(trigger.IsUpdate){
