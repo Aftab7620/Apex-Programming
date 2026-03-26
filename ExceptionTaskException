@@ -1,5 +1,4 @@
 public class ExceptionTaskException extends Exception {
-
   //Basic Try-Catch Block Handle Divide By Zero
   public static void divideByZeroExp(){
         integer num1=10;
